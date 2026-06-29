@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lisa Bumbum — Creme Firmador</title>
-  <meta name="description" content="Creme firmador que deixa o bumbum liso, firme e empinado. Resultado visível em 7 dias. 8.000+ clientes satisfeitas." />
-  <meta property="og:title" content="Lisa Bumbum — Creme Firmador" />
-  <meta property="og:description" content="Resultado visível em 7 dias. 8.000+ mulheres já transformaram." />
-  <meta property="og:type" content="product" />
+  <title>Lisa Bumbum — Creme Firmador que Viralizou!</title>
+  <meta name="description" content="O creme firmador que deixa o bumbum liso, firme e empinado em dias. Mais de 8.000 clientes satisfeitas. Aproveite a promoção!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -24,1124 +25,720 @@
   src="https://www.facebook.com/tr?id=1350679366463627&ev=PageView&noscript=1"/></noscript>
 <style>
 :root {
-  --bg:    #FDFAF6;
-  --bg2:   #F2EDE5;
-  --rose:  #C8375A;
-  --rose2: #F5E8EC;
-  --ink:   #17100C;
-  --ink2:  #7C6D64;
-  --line:  #E4DCD4;
-  --white: #FFFFFF;
+  --pink: #e55a80;
+  --pink-light: #fff0f4;
+  --pink-dark: #c44a6a;
+  --text: #333;
+  --text-light: #666;
+  --bg-gray: #f7f7f7;
+  --white: #ffffff;
+  --green: #28a745;
+  --border: #e0e0e0;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  overflow-x: hidden;
-  padding-bottom: 80px;
-}
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+html { scroll-behavior:smooth; }
+body { color:var(--text); background:var(--white); }
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
+img, video { max-width:100%; display:block; }
+section { padding:70px 0; }
+.hidden { display:none !important; }
 
-@keyframes spin { to { transform: rotate(360deg); } }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+.cta-button {
+  display:inline-block; background:var(--pink); color:var(--white);
+  padding:16px 32px; border-radius:50px; text-decoration:none;
+  font-weight:700; text-align:center; text-transform:uppercase;
+  letter-spacing:1px; border:none; cursor:pointer; font-size:1em;
+  transition:transform .2s, box-shadow .2s, background .2s;
 }
+.cta-button:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(229,90,128,.4); }
+.section-title { text-align:center; font-size:2.4em; margin-bottom:15px; font-weight:700; }
+.section-subtitle { text-align:center; max-width:680px; margin:0 auto 50px; color:var(--text-light); font-size:1.05em; }
 
-/* ── Barra topo ── */
-.top-bar {
-  background: var(--ink);
-  color: rgba(255,255,255,0.85);
-  text-align: center;
-  font-size: 11.5px;
-  font-weight: 500;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  padding: 10px 16px;
+/* ── Anúncio ── */
+.announcement-bar {
+  background:var(--pink); color:var(--white); text-align:center;
+  padding:10px 16px; font-weight:500; font-size:.9em; letter-spacing:.03em;
 }
 
 /* ── Header ── */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 90;
-  background: rgba(253,250,246,0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-  padding: 13px 20px;
+header {
+  background:var(--white); box-shadow:0 2px 10px rgba(0,0,0,.06);
+  position:sticky; top:0; z-index:1000; padding:14px 0;
 }
-.header-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+.header-inner { display:flex; justify-content:space-between; align-items:center; }
+.logo { font-size:1.8em; font-weight:700; color:var(--pink); text-decoration:none; letter-spacing:.02em; }
+.logo span { color:var(--text); }
+.cart-icon { font-size:1.5em; color:var(--text); cursor:pointer; position:relative; }
+.cart-badge {
+  position:absolute; top:-8px; right:-12px; background:var(--pink); color:#fff;
+  width:22px; height:22px; border-radius:50%; display:flex; justify-content:center;
+  align-items:center; font-size:.75em; font-weight:700; border:2px solid #fff;
+  transform:scale(0); transition:transform .2s;
 }
-.logo-type {
-  font-size: 1.25rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.logo-type em { color: var(--rose); font-style: normal; }
-.btn-nav {
-  background: var(--rose);
-  color: #fff;
-  border: none;
-  border-radius: 7px;
-  padding: 10px 22px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: opacity .15s;
-  white-space: nowrap;
-}
-.btn-nav:hover { opacity: .88; }
+.cart-badge.show { transform:scale(1); }
 
 /* ── Hero ── */
-.hero {
-  padding: 80px 20px 88px;
-  text-align: center;
-}
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--rose);
-  border: 1.5px solid currentColor;
-  border-radius: 100px;
-  padding: 5px 15px;
-  margin-bottom: 30px;
-}
-.hero-tag::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--rose);
-  flex-shrink: 0;
-}
-.hero-h1 {
-  font-size: clamp(2.6rem, 7.5vw, 5rem);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.04;
-  max-width: 760px;
-  margin: 0 auto 22px;
-  color: var(--ink);
-}
-.hero-h1 span { color: var(--rose); }
-.hero-sub {
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  max-width: 460px;
-  margin: 0 auto 40px;
-  color: var(--ink2);
-  line-height: 1.65;
-}
-.hero-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 44px;
-}
-.btn-primary {
-  background: var(--rose);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 18px 44px;
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  cursor: pointer;
-  transition: opacity .15s, transform .12s;
-  width: 100%;
-  max-width: 340px;
-}
-.btn-primary:hover { opacity: .9; transform: translateY(-1px); }
-.btn-primary:active { transform: translateY(0); }
-.hero-proof {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  font-size: 13px;
-  color: var(--ink2);
-}
-.proof-dot { color: var(--line); }
-.proof-rating { color: var(--rose); font-weight: 700; }
+.hero { background:var(--pink-light); text-align:center; padding:80px 20px; }
+.hero-stars { color:#fdd835; font-size:.95em; margin-bottom:8px; }
+.hero-proof-text { font-weight:600; margin-bottom:20px; color:var(--text-light); }
+.hero h1 { font-size:3em; font-weight:700; margin-bottom:16px; line-height:1.15; }
+.hero h1 span { color:var(--pink); }
+.hero .subtitle { font-size:1.15em; color:var(--text-light); max-width:640px; margin:0 auto 32px; line-height:1.6; }
 
-/* ── Seção: vídeos ── */
-.videos-section { background: var(--bg2); padding: 72px 0; }
-.section-head { margin-bottom: 40px; }
-.section-eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink2);
-  margin-bottom: 10px;
+/* ── Influencers ── */
+#influencers { background:var(--white); }
+.influencers-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
-.section-title {
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  color: var(--ink);
+.influencer-card {
+  border-radius:16px; overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.09);
+  aspect-ratio:9/16;
+  cursor:pointer;
+  position:relative;
+  background:#f0e8f0;
 }
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+.influencer-card video { width:100%; height:100%; object-fit:cover; }
+.inf-play {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(0,0,0,.2); transition:background .2s;
 }
-@media (min-width: 640px) {
-  .video-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.inf-play-btn {
+  width:56px; height:56px; background:rgba(255,255,255,.9); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; transition:opacity .2s, transform .2s;
 }
-.vc {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 9/16;
-  background: #D9D2C9;
-  cursor: pointer;
-}
-.vc video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.vc-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(23,16,12,0.22);
-  transition: background .2s;
-}
-.vc.playing .vc-overlay { background: transparent; }
-.vc-play {
-  width: 52px;
-  height: 52px;
-  background: rgba(255,255,255,0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity .2s, transform .2s;
-}
-.vc-play svg { width: 20px; height: 20px; fill: var(--ink); margin-left: 3px; }
-.vc.playing .vc-play { opacity: 0; transform: scale(0.8); }
+.inf-play-btn i { color:var(--pink); font-size:1.3em; margin-left:4px; }
+.influencer-card.playing .inf-play { background:transparent; }
+.influencer-card.playing .inf-play-btn { opacity:0; transform:scale(.8); }
 
-/* ── Benefícios ── */
-.benefits-section { padding: 88px 0; }
-.benefits-grid {
-  margin-top: 52px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  overflow: hidden;
+/* ── Oferta ── */
+#oferta { background:var(--white); }
+.oferta-grid {
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  align-items:flex-start;
 }
-@media (min-width: 640px) {
-  .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+.product-visual {
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 40px rgba(0,0,0,.1);
+  background:linear-gradient(135deg, #fce8f0 0%, #f9d0e0 50%, #f5c0d5 100%);
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
 }
-.benefit {
-  background: var(--white);
-  padding: 36px 30px;
+.product-visual-inner {
+  text-align:center;
+  padding:40px;
 }
-.benefit-num {
-  font-size: 3.2rem;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  color: var(--rose);
-  line-height: 1;
-  margin-bottom: 16px;
+.product-icon { font-size:6em; margin-bottom:16px; display:block; }
+.product-brand-name {
+  font-size:2.2em; font-weight:700; color:var(--pink);
+  letter-spacing:.06em; line-height:1.1;
 }
-.benefit-name {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 8px;
-}
-.benefit-desc { font-size: 0.9rem; color: var(--ink2); line-height: 1.65; }
+.product-brand-sub { font-size:.85em; color:var(--pink-dark); font-weight:500; margin-top:6px; letter-spacing:.04em; text-transform:uppercase; }
+.product-vol { margin-top:20px; background:rgba(229,90,128,.12); border:1px solid rgba(229,90,128,.3); border-radius:8px; padding:6px 16px; display:inline-block; font-size:.8em; font-weight:600; color:var(--pink-dark); }
 
-/* ── Kits ── */
-.kits-section { background: var(--bg2); padding: 88px 0; }
-.kits-grid {
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
+.product-details h2 { font-size:2.1em; margin-bottom:14px; font-weight:600; line-height:1.2; }
+.price-block { margin-bottom:6px; }
+.price-old { font-size:1em; text-decoration:line-through; color:var(--text-light); }
+.price-new { font-size:2.4em; font-weight:700; color:var(--pink); margin-left:8px; }
+.price-install { color:var(--text-light); font-size:.9em; font-weight:500; margin-bottom:24px; }
+
+.kit-title { font-weight:600; margin-bottom:12px; font-size:.95em; }
+.kit-options { display:flex; flex-direction:column; gap:10px; margin-bottom:24px; }
+.kit-opt {
+  display:flex; justify-content:space-between; align-items:center;
+  background:var(--pink-light); padding:14px 18px; border-radius:12px;
+  border:2px solid transparent; cursor:pointer; transition:border-color .2s;
+  position:relative;
 }
-@media (min-width: 640px) {
-  .kits-grid { grid-template-columns: repeat(3, 1fr); }
+.kit-opt.active { border-color:var(--pink); }
+.kit-opt-badge {
+  position:absolute; top:-10px; right:12px;
+  background:var(--pink); color:#fff; font-size:.65em; font-weight:700;
+  text-transform:uppercase; letter-spacing:.06em; padding:2px 10px; border-radius:100px;
 }
-.kit-card {
-  position: relative;
-  background: var(--white);
-  border: 1.5px solid var(--line);
-  border-radius: 18px;
-  padding: 30px 26px 28px;
-  cursor: pointer;
-  transition: border-color .2s, box-shadow .2s;
+.kit-opt-label { font-weight:600; font-size:.95em; }
+.kit-opt-price { font-weight:700; color:var(--pink); }
+.kit-opt-de { font-size:.78em; color:var(--text-light); text-decoration:line-through; margin-left:6px; }
+
+.btn-comprar {
+  width:100%; padding:18px; background:var(--pink); color:#fff; border:none;
+  border-radius:50px; font-size:1.1em; font-weight:700; letter-spacing:.5px;
+  text-transform:uppercase; cursor:pointer; transition:transform .2s, box-shadow .2s;
+  margin-bottom:16px;
 }
-.kit-card.selected {
-  border-color: var(--rose);
-  box-shadow: 0 0 0 4px var(--rose2);
+.btn-comprar:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(229,90,128,.4); }
+
+.trust-badges { display:flex; gap:20px; flex-wrap:wrap; margin-top:4px; }
+.trust-badge { display:flex; align-items:center; gap:6px; font-size:.82em; color:var(--text-light); }
+.trust-badge i { color:var(--pink); }
+
+.product-accordion { margin-top:28px; border-top:1px solid var(--border); }
+.acc-item { border-bottom:1px solid var(--border); }
+.acc-header {
+  padding:14px 0; cursor:pointer; display:flex; justify-content:space-between;
+  align-items:center; font-weight:600; font-size:.95em; user-select:none;
 }
-.kit-badge {
-  position: absolute;
-  top: -13px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--rose);
-  color: #fff;
-  font-size: 10.5px;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  padding: 3px 13px;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-.kit-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  color: var(--ink2);
-  margin-bottom: 10px;
-}
-.kit-price {
-  font-size: 2.1rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: var(--ink);
-  line-height: 1;
-}
-.kit-de {
-  font-size: 13px;
-  color: var(--ink2);
-  text-decoration: line-through;
-  margin-top: 3px;
-}
-.kit-desc {
-  margin-top: 14px;
-  font-size: 13px;
-  color: var(--ink2);
-  line-height: 1.6;
-}
-.kit-check { color: var(--rose); margin-right: 5px; }
-.btn-add {
-  display: block;
-  width: 100%;
-  margin-top: 36px;
-  background: var(--rose);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 18px;
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  transition: opacity .15s, transform .12s;
-}
-.btn-add:hover { opacity: .9; transform: translateY(-1px); }
+.acc-icon { transition:transform .3s; color:var(--text-light); }
+.acc-item.open .acc-icon { transform:rotate(45deg); }
+.acc-body { max-height:0; overflow:hidden; transition:max-height .3s ease-out; }
+.acc-body p { padding-bottom:14px; color:var(--text-light); font-size:.9em; line-height:1.7; }
+.acc-item.open .acc-body { max-height:200px; }
 
 /* ── Depoimentos ── */
-.depo-section { padding: 88px 0; }
+#depoimentos { background:var(--bg-gray); }
 .depo-grid {
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
 }
-@media (min-width: 640px) {
-  .depo-grid { grid-template-columns: repeat(2, 1fr); }
+.depo-card {
+  background:var(--white); padding:28px; border-radius:12px;
+  border:1px solid var(--border);
 }
-@media (min-width: 900px) {
-  .depo-grid { grid-template-columns: repeat(3, 1fr); }
-}
-.depo {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 22px 20px;
-}
-.depo-stars { font-size: 11.5px; color: var(--rose); letter-spacing: 2px; margin-bottom: 10px; }
-.depo-text { font-size: 0.9rem; color: var(--ink); line-height: 1.65; margin-bottom: 14px; }
-.depo-meta { font-size: 11.5px; color: var(--ink2); font-weight: 600; }
-.depo-meta span { color: #5F9560; font-weight: 500; margin-left: 5px; }
+.depo-header { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+.depo-avatar img { width:52px; height:52px; border-radius:50%; object-fit:cover; }
+.depo-name { font-weight:600; font-size:1em; }
+.depo-stars { color:#fdd835; font-size:.85em; margin-top:2px; }
+.depo-text { font-style:italic; color:var(--text-light); font-size:.92em; line-height:1.7; }
 
-/* ── FAQ ── */
-.faq-section { background: var(--bg2); padding: 88px 0; }
-.faq-wrap { max-width: 700px; margin: 40px auto 0; border-top: 1px solid var(--line); }
-.faq-item { border-bottom: 1px solid var(--line); }
-.faq-q {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 0;
-  cursor: pointer;
-  font-size: 0.97rem;
-  font-weight: 600;
-  color: var(--ink);
-  user-select: none;
-}
-.faq-icon {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 1.5px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--ink2);
-  transition: transform .25s;
-  line-height: 1;
-}
-.faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-a {
-  display: none;
-  padding-bottom: 20px;
-  font-size: 0.92rem;
-  color: var(--ink2);
-  line-height: 1.75;
-}
-.faq-item.open .faq-a { display: block; }
+/* ── Garantia ── */
+#garantia { background:var(--pink-light); text-align:center; }
+.garantia-box { max-width:760px; margin:0 auto; }
+.garantia-box i { font-size:4em; color:var(--pink); margin-bottom:20px; }
 
 /* ── Footer ── */
-footer {
-  background: var(--ink);
-  padding: 32px 20px;
-  text-align: center;
-  color: rgba(255,255,255,0.4);
-  font-size: 12.5px;
-  letter-spacing: 0.03em;
-  padding-bottom: 112px;
+footer { background:#222; color:#aaa; padding-top:56px; }
+.footer-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+  gap:30px; padding-bottom:40px; border-bottom:1px solid #3a3a3a;
 }
+.footer-col h4 { color:#fff; font-weight:600; margin-bottom:14px; font-size:.95em; }
+.footer-col a, .footer-col p { color:#aaa; text-decoration:none; display:block; margin-bottom:8px; font-size:.9em; transition:color .2s; }
+.footer-col a:hover { color:var(--pink); }
+.social-icons a { font-size:1.4em; margin-right:14px; color:#aaa; }
+.social-icons a:hover { color:var(--pink); }
+.copyright { text-align:center; padding:20px 0; font-size:.85em; }
 
-/* ── Sticky CTA ── */
-.sticky-cta {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 80;
-  background: var(--white);
-  border-top: 1px solid var(--line);
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+/* ══════════════════════════════
+   PAINEL DO CARRINHO
+══════════════════════════════ */
+.cart-overlay {
+  position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:1999;
+  opacity:0; visibility:hidden; transition:opacity .3s;
 }
-.sticky-info { min-width: 0; }
-.sticky-kit { font-size: 12px; color: var(--ink2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.sticky-price { font-size: 1.2rem; font-weight: 900; color: var(--ink); }
-.sticky-btn {
-  flex-shrink: 0;
-  background: var(--rose);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 14px 26px;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  white-space: nowrap;
+.cart-overlay.active { opacity:1; visibility:visible; }
+.cart-panel {
+  position:fixed; top:0; right:-110%; width:100%; max-width:440px; height:100%;
+  background:var(--white); box-shadow:-5px 0 20px rgba(0,0,0,.12);
+  z-index:2000; transition:right .35s cubic-bezier(.4,0,.2,1);
+  display:flex; flex-direction:column;
 }
+.cart-panel.active { right:0; }
+.cart-header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px; border-bottom:1px solid var(--border);
+}
+.cart-header h3 { font-size:1.1em; font-weight:700; }
+.cart-close { font-size:1.4em; cursor:pointer; color:var(--text-light); }
+.cart-body { flex:1; overflow-y:auto; padding:20px; }
+.cart-empty { text-align:center; padding:60px 20px; color:var(--text-light); }
+.cart-empty i { font-size:3em; color:var(--border); margin-bottom:16px; }
+.cart-line-item { display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--border); }
+.cart-line-img {
+  width:72px; height:72px; flex-shrink:0; border-radius:10px; overflow:hidden;
+  background:linear-gradient(135deg, #fce8f0, #f5c0d5);
+  display:flex; align-items:center; justify-content:center; font-size:2em;
+}
+.cart-line-info { flex:1; }
+.cart-line-name { font-weight:600; font-size:.9em; margin-bottom:4px; }
+.cart-line-price { font-weight:700; color:var(--pink); font-size:1.05em; }
+.cart-footer-panel { padding:20px; border-top:1px solid var(--border); }
+.cart-totals { margin-bottom:16px; }
+.cart-totals-row { display:flex; justify-content:space-between; margin-bottom:8px; font-size:.9em; color:var(--text-light); }
+.cart-totals-row.total { font-size:1.1em; font-weight:700; color:var(--text); border-top:1px solid var(--border); padding-top:12px; margin-top:4px; }
+.btn-checkout {
+  display:block; width:100%; padding:18px; background:var(--pink); color:#fff;
+  border:none; border-radius:50px; font-size:1em; font-weight:700; letter-spacing:.5px;
+  text-transform:uppercase; cursor:pointer; transition:transform .2s, box-shadow .2s;
+  text-align:center;
+}
+.btn-checkout:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(229,90,128,.4); }
 
-/* ══════════════════════════════════════
-   CHECKOUT OVERLAY
-══════════════════════════════════════ */
+/* ══════════════════════════════
+   MODAL DE CHECKOUT
+══════════════════════════════ */
 .ck-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: rgba(23,16,12,0.5);
-  padding: 0;
-  overflow-y: auto;
-  align-items: flex-end;
+  display:none; position:fixed; inset:0; z-index:3000;
+  background:rgba(0,0,0,.6); align-items:flex-end; overflow-y:auto;
 }
-.ck-overlay.aberto { display: flex; }
-@media (min-width: 580px) {
-  .ck-overlay { align-items: center; justify-content: center; padding: 20px; }
-}
+.ck-overlay.open { display:flex; }
+@media (min-width:580px) { .ck-overlay { align-items:center; justify-content:center; padding:20px; } }
 .ck-panel {
-  background: var(--white);
-  width: 100%;
-  max-width: 480px;
-  max-height: 100vh;
-  overflow-y: auto;
-  border-radius: 20px 20px 0 0;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  background:var(--white); width:100%; max-width:500px; max-height:100vh;
+  overflow-y:auto; border-radius:20px 20px 0 0; position:relative;
 }
-@media (min-width: 580px) {
-  .ck-panel { border-radius: 20px; max-height: 90vh; }
+@media (min-width:580px) { .ck-panel { border-radius:16px; max-height:92vh; } }
+.ck-head {
+  position:sticky; top:0; background:var(--white); padding:18px 20px;
+  border-bottom:1px solid var(--border); display:flex;
+  justify-content:space-between; align-items:center; z-index:2;
 }
-.ck-header {
-  position: sticky;
-  top: 0;
-  background: var(--white);
-  border-bottom: 1px solid var(--line);
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 2;
-}
-.ck-title { font-size: 1rem; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; }
+.ck-head-title { font-size:1.05em; font-weight:700; }
 .ck-close {
-  width: 32px; height: 32px;
-  border: none;
-  background: var(--bg2);
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 16px;
-  color: var(--ink2);
-  display: flex; align-items: center; justify-content: center;
+  width:30px; height:30px; border:none; background:var(--bg-gray);
+  border-radius:50%; cursor:pointer; font-size:1em; color:var(--text-light);
+  display:flex; align-items:center; justify-content:center;
 }
-
-/* Steps */
-.ck-steps {
-  display: flex;
-  padding: 14px 20px;
-  gap: 0;
-  border-bottom: 1px solid var(--line);
-}
+.ck-steps { display:flex; border-bottom:1px solid var(--border); }
 .ck-step {
-  flex: 1;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink2);
-  padding-bottom: 10px;
-  border-bottom: 2px solid var(--line);
-  transition: color .2s, border-color .2s;
+  flex:1; text-align:center; padding:12px 0; font-size:.75em; font-weight:600;
+  text-transform:uppercase; letter-spacing:.07em; color:var(--text-light);
+  border-bottom:2px solid transparent; transition:all .2s;
 }
-.ck-step.ativo { color: var(--rose); border-color: var(--rose); }
-.ck-step.feito { color: var(--rose); }
-
-/* Etapas */
-.ck-etapa { display: none; padding: 24px 20px; animation: fadeUp .2s ease; }
-.ck-etapa.ativa { display: block; }
-
-/* Carrinho */
-.cart-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-  gap: 12px;
-}
-.cart-item-name { font-size: 0.95rem; font-weight: 600; color: var(--ink); }
-.cart-item-price { font-size: 1rem; font-weight: 800; color: var(--ink); white-space: nowrap; }
-.cart-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  font-size: 0.92rem;
-  color: var(--ink2);
-}
-.cart-row.total { border-top: 1px solid var(--line); margin-top: 4px; padding-top: 14px; color: var(--ink); font-weight: 800; font-size: 1.05rem; }
-.cart-total-val { color: var(--rose); font-size: 1.3rem; }
+.ck-step.active { color:var(--pink); border-color:var(--pink); }
+.ck-step.done { color:var(--pink); }
+.ck-body { padding:24px 20px; }
+.ck-stage { display:none; }
+.ck-stage.show { display:block; }
 
 /* Form */
-.form-field { margin-bottom: 14px; }
-.form-field label { display: block; font-size: 12.5px; font-weight: 600; color: var(--ink2); margin-bottom: 5px; letter-spacing: 0.02em; }
+.form-group { margin-bottom:14px; }
+.form-group label { display:block; font-size:.8em; font-weight:600; color:var(--text-light); margin-bottom:5px; letter-spacing:.03em; }
 .form-input {
-  width: 100%;
-  border: 1.5px solid var(--line);
-  border-radius: 9px;
-  padding: 12px 14px;
-  font-size: 0.95rem;
-  color: var(--ink);
-  background: var(--bg);
-  outline: none;
-  transition: border-color .2s;
-  font-family: inherit;
+  width:100%; border:1.5px solid var(--border); border-radius:10px;
+  padding:12px 14px; font-size:.95em; color:var(--text);
+  background:var(--bg-gray); outline:none; transition:border-color .2s;
+  font-family:'Poppins',sans-serif;
 }
-.form-input:focus { border-color: var(--rose); background: var(--white); }
-.form-input.erro { border-color: #D94040; background: #FFF5F5; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.cep-row { display: flex; gap: 8px; }
-.cep-row .form-input { flex: 1; }
+.form-input:focus { border-color:var(--pink); background:#fff; }
+.form-input.err { border-color:#e74c3c; background:#fff8f8; }
+.form-row2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.cep-group { display:flex; gap:8px; }
+.cep-group .form-input { flex:1; }
 .btn-cep {
-  flex-shrink: 0;
-  background: var(--bg2);
-  border: 1.5px solid var(--line);
-  border-radius: 9px;
-  padding: 0 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink2);
-  cursor: pointer;
-  white-space: nowrap;
+  flex-shrink:0; border:1.5px solid var(--border); border-radius:10px;
+  padding:0 16px; background:var(--bg-gray); font-size:.82em; font-weight:600;
+  color:var(--text-light); cursor:pointer; white-space:nowrap; font-family:'Poppins',sans-serif;
 }
-select.form-input { cursor: pointer; }
-.obrig { color: var(--rose); }
+.obrig { color:var(--pink); }
+.ck-cart-summary { border:1px solid var(--border); border-radius:12px; padding:16px; margin-bottom:20px; }
+.ck-cart-row { display:flex; justify-content:space-between; font-size:.9em; color:var(--text-light); padding:6px 0; }
+.ck-cart-row.total-row { font-weight:700; color:var(--text); font-size:1.05em; border-top:1px solid var(--border); margin-top:6px; padding-top:12px; }
+.ck-cart-row .total-price { color:var(--pink); font-size:1.2em; }
 
-/* Nav checkout */
-.ck-nav {
-  display: flex;
-  gap: 10px;
-  padding-top: 20px;
-  margin-top: 10px;
-  border-top: 1px solid var(--line);
-}
+.ck-actions { display:flex; gap:10px; margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }
 .btn-back {
-  flex-shrink: 0;
-  background: none;
-  border: 1.5px solid var(--line);
-  border-radius: 9px;
-  padding: 14px 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--ink2);
-  cursor: pointer;
+  flex-shrink:0; border:1.5px solid var(--border); border-radius:50px;
+  padding:14px 20px; background:none; font-size:.88em; font-weight:600;
+  color:var(--text-light); cursor:pointer; font-family:'Poppins',sans-serif;
 }
 .btn-next {
-  flex: 1;
-  background: var(--rose);
-  color: #fff;
-  border: none;
-  border-radius: 9px;
-  padding: 14px;
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-  transition: opacity .15s;
+  flex:1; border:none; border-radius:50px; padding:16px;
+  background:var(--pink); color:#fff; font-size:.95em; font-weight:700;
+  letter-spacing:.5px; text-transform:uppercase; cursor:pointer;
+  transition:transform .2s, box-shadow .2s; font-family:'Poppins',sans-serif;
 }
-.btn-next:hover { opacity: .9; }
-.btn-next:disabled { opacity: .5; cursor: default; }
+.btn-next:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(229,90,128,.4); }
+.btn-next:disabled { opacity:.5; pointer-events:none; }
 
 /* PIX */
-.pix-box {
-  text-align: center;
-  padding: 10px 0;
-}
-.pix-valor {
-  font-size: 2.2rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: var(--rose);
-  line-height: 1;
-  margin-bottom: 6px;
-}
-.pix-desc { font-size: 13px; color: var(--ink2); margin-bottom: 28px; }
-.pix-loader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  padding: 36px 0;
-}
+.pix-wrap { text-align:center; padding:10px 0; }
+.pix-amount { font-size:2.6em; font-weight:700; color:var(--pink); letter-spacing:-.02em; line-height:1; }
+.pix-sub { font-size:.88em; color:var(--text-light); margin:6px 0 28px; }
+.pix-loading { display:flex; flex-direction:column; align-items:center; gap:14px; padding:40px 0; }
 .pix-spinner {
-  width: 36px; height: 36px;
-  border: 3px solid var(--line);
-  border-top-color: var(--rose);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+  width:40px; height:40px; border:3px solid var(--border);
+  border-top-color:var(--pink); border-radius:50%;
+  animation:spin .8s linear infinite;
 }
-.pix-loader p { font-size: 13px; color: var(--ink2); }
-#pix-gerado { display: none; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.pix-loading p { font-size:.88em; color:var(--text-light); }
+#pix-qr-wrap { display:none; }
 #pix-qrcode {
-  width: 200px; height: 200px;
-  margin: 0 auto 20px;
-  background: #fff;
-  padding: 10px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
+  width:200px; height:200px; margin:0 auto 18px;
+  padding:10px; background:#fff; border:1px solid var(--border); border-radius:14px;
 }
-.pix-chave-box {
-  background: var(--bg2);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 10px 14px;
-  word-break: break-all;
-  font-size: 11px;
-  color: var(--ink2);
-  font-family: monospace;
-  margin-bottom: 14px;
-  text-align: left;
-  max-height: 60px;
-  overflow: hidden;
+.pix-code-box {
+  background:var(--bg-gray); border:1px solid var(--border); border-radius:10px;
+  padding:10px 14px; font-family:monospace; font-size:.75em; color:var(--text-light);
+  word-break:break-all; text-align:left; margin-bottom:14px; max-height:54px; overflow:hidden;
 }
-.btn-copy {
-  display: block;
-  width: 100%;
-  background: var(--ink);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 16px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: opacity .15s;
-  margin-bottom: 20px;
+.btn-pix-copy {
+  display:block; width:100%; padding:16px; background:#222; color:#fff;
+  border:none; border-radius:50px; font-size:.95em; font-weight:700;
+  letter-spacing:.5px; text-transform:uppercase; cursor:pointer;
+  transition:background .2s; margin-bottom:20px; font-family:'Poppins',sans-serif;
 }
-.btn-copy:hover { opacity: .85; }
-.btn-copy.copied { background: #3A7A3A; }
-.pix-steps { text-align: left; }
-.pix-steps p {
-  font-size: 12.5px;
-  color: var(--ink2);
-  padding: 6px 0;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  gap: 10px;
-}
-.pix-steps p:last-child { border-bottom: none; }
+.btn-pix-copy.copied { background:var(--green); }
+.pix-steps-list { text-align:left; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+.pix-step { display:flex; gap:12px; align-items:flex-start; padding:12px 16px; border-bottom:1px solid var(--border); font-size:.88em; color:var(--text-light); }
+.pix-step:last-child { border-bottom:none; }
 .pix-step-n {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  background: var(--rose);
-  color: #fff;
-  border-radius: 50%;
-  font-size: 11px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-shrink:0; width:22px; height:22px; background:var(--pink); color:#fff;
+  border-radius:50%; font-size:.75em; font-weight:700; display:flex;
+  align-items:center; justify-content:center;
 }
-#pix-erro { display: none; text-align: center; padding: 24px 0; }
-#pix-erro-msg { font-size: 0.88rem; color: #D94040; margin: 10px 0 16px; }
+#pix-error { display:none; text-align:center; padding:30px 0; }
+#pix-error-msg { font-size:.88em; color:#e74c3c; margin:10px 0 18px; }
 .btn-retry {
-  background: var(--bg2);
-  border: 1.5px solid var(--line);
-  border-radius: 8px;
-  padding: 10px 22px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--ink);
-  cursor: pointer;
+  background:var(--bg-gray); border:1.5px solid var(--border); border-radius:50px;
+  padding:10px 24px; font-size:.88em; font-weight:600; color:var(--text); cursor:pointer;
+  font-family:'Poppins',sans-serif;
+}
+.done-wrap { text-align:center; padding:50px 20px; }
+.done-icon { font-size:3.5em; margin-bottom:18px; }
+.done-wrap h3 { font-size:1.5em; font-weight:700; margin-bottom:10px; }
+.done-wrap p { color:var(--text-light); font-size:.95em; line-height:1.7; }
+.btn-done {
+  margin-top:24px; background:var(--pink); color:#fff; border:none;
+  border-radius:50px; padding:14px 36px; font-size:.95em; font-weight:700;
+  cursor:pointer; font-family:'Poppins',sans-serif;
 }
 
-/* Confirmação */
-.ck-done { text-align: center; padding: 48px 20px; }
-.ck-done-icon { font-size: 3rem; margin-bottom: 16px; }
-.ck-done h3 { font-size: 1.4rem; font-weight: 800; color: var(--ink); margin-bottom: 10px; }
-.ck-done p { font-size: 0.92rem; color: var(--ink2); line-height: 1.7; }
-.btn-done {
-  display: inline-block;
-  margin-top: 24px;
-  background: var(--rose);
-  color: #fff;
-  border: none;
-  border-radius: 9px;
-  padding: 14px 32px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
+@media (max-width:900px) {
+  .oferta-grid { grid-template-columns:1fr; gap:40px; }
+  .influencers-grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:640px) {
+  .hero h1 { font-size:2.2em; }
+  .section-title { font-size:1.9em; }
+  .influencers-grid { grid-template-columns:1fr 1fr; gap:10px; }
+  .depo-grid { grid-template-columns:1fr; }
 }
 </style>
 </head>
 <body>
 
-<!-- Barra topo -->
-<div class="top-bar">Frete fixo R$ 7,00 &nbsp;·&nbsp; Pagamento 100% seguro via PIX &nbsp;·&nbsp; Entrega em todo Brasil</div>
+<div class="announcement-bar">✨ FRETE FIXO R$ 7 PARA TODO BRASIL &nbsp;·&nbsp; PAGAMENTO SEGURO VIA PIX ✨</div>
 
-<!-- Header -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo-type">LISA <em>BUMBUM</em></div>
-    <button class="btn-nav" onclick="abrirCarrinho()">Comprar Agora</button>
+<header>
+  <div class="container header-inner">
+    <a href="#" class="logo">lisa <span>bumbum</span></a>
+    <div class="cart-icon" id="cart-icon">
+      <i class="fas fa-shopping-bag"></i>
+      <span class="cart-badge" id="cart-badge">1</span>
+    </div>
   </div>
 </header>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-tag">Creme Firmador</div>
-    <h1 class="hero-h1">O bumbum que você<br><span>sempre quis ter.</span></h1>
-    <p class="hero-sub">
-      Firmeza, levantamento e hidratação profunda em um único creme.
-      Resultado visível a partir do 7º dia.
-    </p>
-    <div class="hero-cta">
-      <button class="btn-primary" onclick="abrirCarrinho()">Quero o meu agora →</button>
-    </div>
-    <div class="hero-proof">
-      <span><span class="proof-rating">4.9★</span>&nbsp; 3.847 avaliações</span>
-      <span class="proof-dot">·</span>
-      <span>8.000+ clientes</span>
-      <span class="proof-dot">·</span>
-      <span>Envio em 24h</span>
-    </div>
-  </div>
-</section>
+<main>
 
-<!-- Vídeos -->
-<section class="videos-section">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="section-eyebrow">Resultados reais</p>
-      <h2 class="section-title">As clientes mostram<br>o resultado.</h2>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-stars">★★★★★</div>
+      <p class="hero-proof-text">Mais de 8.000 clientes satisfeitas!</p>
+      <h1>O Creme que <span>Deixou o Bumbum Firme</span> de Verdade</h1>
+      <p class="subtitle">Firmeza, levantamento e hidratação profunda em um único creme. O produto que as influencers não conseguem parar de recomendar.</p>
+      <a href="#oferta" class="cta-button">EU QUERO O MEU AGORA</a>
     </div>
-    <div class="video-grid">
-      <div class="vc">
-        <video src="videos/ssstik.io_@leticiacosta.shop_1782765626402.mp4" preload="none" playsinline loop></video>
-        <div class="vc-overlay"><div class="vc-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-      </div>
-      <div class="vc">
-        <video src="videos/ssstik.io_@dicasdaree__1782765948763.mp4" preload="none" playsinline loop></video>
-        <div class="vc-overlay"><div class="vc-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-      </div>
-      <div class="vc">
-        <video src="videos/ssstik.io_@lalymaromba_1782765776297.mp4" preload="none" playsinline loop></video>
-        <div class="vc-overlay"><div class="vc-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-      </div>
-      <div class="vc">
-        <video src="videos/ssstik.io_@leticiacosta.shop_1782765835452.mp4" preload="none" playsinline loop></video>
-        <div class="vc-overlay"><div class="vc-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-      </div>
-      <div class="vc">
-        <video src="videos/ssstik.io_@trendyshop.01_1782766001747.mp4" preload="none" playsinline loop></video>
-        <div class="vc-overlay"><div class="vc-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-      </div>
-      <div class="vc">
-        <video src="videos/ssstik.io_1782766172793.mp4" preload="none" playsinline loop></video>
-        <div class="vc-overlay"><div class="vc-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Benefícios -->
-<section class="benefits-section">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="section-eyebrow">Por que funciona</p>
-      <h2 class="section-title">Uma fórmula feita<br>para resultados reais.</h2>
+  <!-- Vídeos das influencers -->
+  <section id="influencers">
+    <div class="container">
+      <h2 class="section-title">Visto nas Influencers</h2>
+      <p class="section-subtitle">Descubra por que Lisa Bumbum se tornou o creme mais recomendado do TikTok entre as maiores criadoras de conteúdo fitness e beleza do Brasil.</p>
+      <div class="influencers-grid">
+        <div class="influencer-card">
+          <video src="videos/ssstik.io_@leticiacosta.shop_1782765626402.mp4" preload="none" playsinline loop></video>
+          <div class="inf-play"><div class="inf-play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="influencer-card">
+          <video src="videos/ssstik.io_@lalymaromba_1782765776297.mp4" preload="none" playsinline loop></video>
+          <div class="inf-play"><div class="inf-play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="influencer-card">
+          <video src="videos/ssstik.io_@dicasdaree__1782765948763.mp4" preload="none" playsinline loop></video>
+          <div class="inf-play"><div class="inf-play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="influencer-card">
+          <video src="videos/ssstik.io_@leticiacosta.shop_1782765835452.mp4" preload="none" playsinline loop></video>
+          <div class="inf-play"><div class="inf-play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="influencer-card">
+          <video src="videos/ssstik.io_@trendyshop.01_1782766001747.mp4" preload="none" playsinline loop></video>
+          <div class="inf-play"><div class="inf-play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="influencer-card">
+          <video src="videos/ssstik.io_1782766172793.mp4" preload="none" playsinline loop></video>
+          <div class="inf-play"><div class="inf-play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+      </div>
     </div>
-    <div class="benefits-grid">
-      <div class="benefit">
-        <div class="benefit-num">01</div>
-        <div class="benefit-name">Firma e Empina</div>
-        <p class="benefit-desc">Ação lifting que melhora o contorno e a firmeza da pele já na primeira semana de uso contínuo.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit-num">02</div>
-        <div class="benefit-name">Reduz Celulite</div>
-        <p class="benefit-desc">Atenua visivelmente o aspecto de casca de laranja, deixando a superfície da pele mais lisa e uniforme.</p>
-      </div>
-      <div class="benefit">
-        <div class="benefit-num">03</div>
-        <div class="benefit-name">Hidratação 72h</div>
-        <p class="benefit-desc">Textura que penetra sem deixar oleosidade. Pele hidratada e macia o dia todo, com aroma suave e sofisticado.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Kits -->
-<section class="kits-section">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="section-eyebrow">Escolha o seu kit</p>
-      <h2 class="section-title">Quanto mais, mais barato<br>fica o frasco.</h2>
-    </div>
-    <div class="kits-grid">
-      <div class="kit-card" id="kit-1" onclick="selecionarKit(1)">
-        <div class="kit-label">1 Frasco</div>
-        <div class="kit-price">R$ 23,99</div>
-        <div class="kit-de">De R$ 49,90</div>
-        <div class="kit-desc">
-          <div><span class="kit-check">✓</span>1 frasco Lisa Bumbum</div>
-          <div><span class="kit-check">✓</span>Para experimentar</div>
+  <!-- Produto + Kits -->
+  <section id="oferta">
+    <div class="container">
+      <div class="oferta-grid">
+        <div class="product-visual">
+          <div class="product-visual-inner">
+            <span class="product-icon">🍑</span>
+            <div class="product-brand-name">LISA<br>BUMBUM</div>
+            <div class="product-brand-sub">Creme Firmador</div>
+            <div class="product-vol">200ml • Uso Diário</div>
+          </div>
         </div>
-      </div>
-      <div class="kit-card selected" id="kit-2" onclick="selecionarKit(2)">
-        <div class="kit-badge">Mais pedido</div>
-        <div class="kit-label">2 Frascos</div>
-        <div class="kit-price">R$ 39,99</div>
-        <div class="kit-de">De R$ 79,90</div>
-        <div class="kit-desc">
-          <div><span class="kit-check">✓</span>2 frascos Lisa Bumbum</div>
-          <div><span class="kit-check">✓</span>Para resultado garantido</div>
-          <div><span class="kit-check">✓</span>Economize R$ 8,00</div>
-        </div>
-      </div>
-      <div class="kit-card" id="kit-3" onclick="selecionarKit(3)">
-        <div class="kit-badge" style="background:var(--ink)">Melhor valor</div>
-        <div class="kit-label">3 Frascos</div>
-        <div class="kit-price">R$ 54,99</div>
-        <div class="kit-de">De R$ 109,90</div>
-        <div class="kit-desc">
-          <div><span class="kit-check">✓</span>3 frascos Lisa Bumbum</div>
-          <div><span class="kit-check">✓</span>Para transformação total</div>
-          <div><span class="kit-check">✓</span>Economize R$ 17,00</div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:30px;">
-      <button class="btn-add" onclick="abrirCarrinho()">Adicionar ao carrinho →</button>
-    </div>
-  </div>
-</section>
+        <div class="product-details">
+          <h2>Creme Firmador Lisa Bumbum</h2>
+          <div class="price-block">
+            <span class="price-old">R$ 49,90</span>
+            <span class="price-new" id="display-price">R$ 23,99</span>
+          </div>
+          <p class="price-install" id="display-install">ou 2x de R$ 11,99 sem juros</p>
 
-<!-- Depoimentos -->
-<section class="depo-section">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="section-eyebrow">8.000+ clientes</p>
-      <h2 class="section-title">O que estão dizendo.</h2>
-    </div>
-    <div class="depo-grid">
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Tô na terceira semana de uso e o resultado é visível. Minha amiga perguntou se eu comecei academia de novo. Não comecei. É o creme."</p>
-        <div class="depo-meta">Camila R. — São Paulo, SP<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Primeiro creme que realmente hidrata de verdade sem deixar pele oleosa. O cheiro é incrível e a firmeza aparece rápido. Recomendo muito."</p>
-        <div class="depo-meta">Fernanda O. — Belo Horizonte, MG<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Já usei vários cremes que prometem e não entregam. Lisa Bumbum entregou. Celulite reduziu visivelmente em 2 semanas."</p>
-        <div class="depo-meta">Juliana M. — Rio de Janeiro, RJ<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Meu marido notou diferença antes de mim. Isso fala tudo. Bumbum mais firme e levantado, pele hidratada. Já pedi o kit de 3."</p>
-        <div class="depo-meta">Aline S. — Curitiba, PR<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Creme perfeito. Textura leve, absorção rápida, sem grudento. Resultado apareceu na segunda semana. Estou adorando."</p>
-        <div class="depo-meta">Priscila N. — Fortaleza, CE<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Tenho celulite há anos. Esse creme fez uma diferença real que eu não esperava. Não some, mas reduziu bastante. Pele muito mais lisa."</p>
-        <div class="depo-meta">Tatiana L. — Salvador, BA<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Entrega rápida, produto original e resultado que aparece. Já indiquei pra 4 amigas. Todas compraram e adoraram também."</p>
-        <div class="depo-meta">Renata F. — Manaus, AM<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Uso manhã e noite como indicado. 10 dias de uso e minha pele já tá muito mais firme. O aroma do creme é sofisticado demais."</p>
-        <div class="depo-meta">Bianca C. — Porto Alegre, RS<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Pedi com receio porque já fui enganada antes. Mas dessa vez valeu cada centavo. Diferença real no bumbum e na coxa. Amei."</p>
-        <div class="depo-meta">Vanessa P. — Brasília, DF<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Tô usando há 1 mês. Coxa mais lisa, bumbum mais firme e a pele hidratada o dia todo. Melhor investimento de cuidado pessoal que fiz esse ano."</p>
-        <div class="depo-meta">Larissa D. — Florianópolis, SC<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"O cheiro é maravilhoso e a textura entra bem na pele. Resultado veio devagar mas constante. Recomendo pra quem tem paciência e consistência."</p>
-        <div class="depo-meta">Isabela A. — Recife, PE<span>✓ Compra verificada</span></div>
-      </div>
-      <div class="depo">
-        <div class="depo-stars">★★★★★</div>
-        <p class="depo-text">"Fui cética mas me surpreendi. Skin care de bumbum agora faz parte da minha rotina. Já tô no 2º frasco e não largo mais."</p>
-        <div class="depo-meta">Monique T. — Goiânia, GO<span>✓ Compra verificada</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+          <p class="kit-title">Escolha seu kit e economize:</p>
+          <div class="kit-options">
+            <div class="kit-opt" id="kopt-1" onclick="selecionarKit(1)">
+              <span class="kit-opt-label">1 Frasco</span>
+              <span><span class="kit-opt-price">R$ 23,99</span><span class="kit-opt-de">R$ 49,90</span></span>
+            </div>
+            <div class="kit-opt active" id="kopt-2" onclick="selecionarKit(2)">
+              <span class="kit-opt-badge">Mais Pedido</span>
+              <span class="kit-opt-label">2 Frascos</span>
+              <span><span class="kit-opt-price">R$ 39,99</span><span class="kit-opt-de">R$ 79,90</span></span>
+            </div>
+            <div class="kit-opt" id="kopt-3" onclick="selecionarKit(3)">
+              <span class="kit-opt-badge" style="background:#333;">Melhor Valor</span>
+              <span class="kit-opt-label">3 Frascos</span>
+              <span><span class="kit-opt-price">R$ 54,99</span><span class="kit-opt-de">R$ 109,90</span></span>
+            </div>
+          </div>
 
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="wrap">
-    <div class="section-head" style="text-align:center; max-width:500px; margin:0 auto;">
-      <p class="section-eyebrow">Dúvidas frequentes</p>
-      <h2 class="section-title">Tem alguma dúvida?</h2>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Para que serve o Lisa Bumbum?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">Lisa Bumbum é um creme firmador para glúteos e coxas que age na firmeza, levantamento, redução da aparência de celulite e hidratação profunda da pele. Ideal para uso diário, manhã e noite.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Em quanto tempo vejo resultado?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">Os primeiros resultados em hidratação e maciez são percebidos nos primeiros dias. Para firmeza e redução de celulite, a maioria das clientes relata resultados visíveis entre 7 e 14 dias de uso contínuo, 2 vezes ao dia.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Pode usar em qualquer tipo de pele?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">Sim. A fórmula foi desenvolvida para todos os tipos de pele. Se você tiver pele muito sensível, recomendamos testar em uma pequena área antes do uso completo.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Como é feita a entrega?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">Enviamos para todo o Brasil via Correios ou transportadora parceira. O frete é fixo de R$ 7,00 independente do kit escolhido. O prazo médio é de 5 a 10 dias úteis após confirmação do pagamento.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          Como funciona o pagamento?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">Aceitamos pagamento via PIX à vista. Após finalizar o pedido, você recebe o QR Code e o código PIX Copia e Cola para pagar diretamente pelo app do seu banco. O pagamento é confirmado automaticamente em segundos.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          E se eu não gostar?
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-a">Nosso compromisso é com o seu resultado. Se por qualquer razão você não ficou satisfeita, entre em contato com nosso suporte e avaliamos cada caso individualmente.</div>
-      </div>
-    </div>
-  </div>
-</section>
+          <button class="btn-comprar" id="btn-add">
+            <i class="fas fa-shopping-bag"></i>&nbsp; Adicionar ao Carrinho
+          </button>
 
-<!-- Footer -->
+          <div class="trust-badges">
+            <div class="trust-badge"><i class="fas fa-lock"></i> Pagamento seguro</div>
+            <div class="trust-badge"><i class="fas fa-truck"></i> Frete fixo R$ 7</div>
+            <div class="trust-badge"><i class="fas fa-bolt"></i> Entrega rápida</div>
+          </div>
+
+          <div class="product-accordion">
+            <div class="acc-item open">
+              <div class="acc-header" onclick="toggleAcc(this)">
+                <span>Resultados Comprovados</span>
+                <i class="fas fa-plus acc-icon"></i>
+              </div>
+              <div class="acc-body">
+                <p>Lisa Bumbum age diretamente na firmeza e levantamento dos glúteos e coxas. Com uso contínuo 2x ao dia, as primeiras melhorias na hidratação e textura são visíveis em poucos dias. A firmeza e redução da celulite aparecem entre 7 e 14 dias.</p>
+              </div>
+            </div>
+            <div class="acc-item">
+              <div class="acc-header" onclick="toggleAcc(this)">
+                <span>Como Usar</span>
+                <i class="fas fa-plus acc-icon"></i>
+              </div>
+              <div class="acc-body">
+                <p>Aplique uma quantidade generosa nos glúteos e coxas. Massageie com movimentos circulares por 2 a 3 minutos até absorção completa. Use pela manhã e à noite para resultados mais rápidos.</p>
+              </div>
+            </div>
+            <div class="acc-item">
+              <div class="acc-header" onclick="toggleAcc(this)">
+                <span>Composição & Cuidados</span>
+                <i class="fas fa-plus acc-icon"></i>
+              </div>
+              <div class="acc-body">
+                <p>Fórmula com ativos firmadores, hidratantes e anti-celulite. Dermatologicamente testado. Adequado para todos os tipos de pele. Conservar em local fresco e seco.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section id="depoimentos">
+    <div class="container">
+      <h2 class="section-title">Quem Usa, Ama!</h2>
+      <p class="section-subtitle">As nossas clientes não têm papas na língua. Veja o que estão falando sobre o creme que virou febre.</p>
+      <div class="depo-grid">
+        <div class="depo-card">
+          <div class="depo-header">
+            <div class="depo-avatar"><img src="images/avatar1.jpg" alt="Camila R." /></div>
+            <div>
+              <div class="depo-name">Camila R.</div>
+              <div class="depo-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="depo-text">"Tô na terceira semana e o resultado é visível. Minha amiga perguntou se eu voltei pra academia. Não voltei — é o creme. Bumbum mais firme e empinado, sem esforço."</p>
+        </div>
+        <div class="depo-card">
+          <div class="depo-header">
+            <div class="depo-avatar"><img src="images/avatar2.jpg" alt="Fernanda L." /></div>
+            <div>
+              <div class="depo-name">Fernanda L.</div>
+              <div class="depo-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="depo-text">"Primeiro creme que hidrata de verdade sem deixar oleoso. O cheiro é sofisticado e a firmeza aparece rápido. Já pedi o kit de 3 pra não ficar sem. Recomendo demais!"</p>
+        </div>
+        <div class="depo-card">
+          <div class="depo-header">
+            <div class="depo-avatar"><img src="images/avatar3.jpg" alt="Juliana M." /></div>
+            <div>
+              <div class="depo-name">Juliana M.</div>
+              <div class="depo-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="depo-text">"Já usei vários cremes que prometem e não entregam. Lisa Bumbum entregou. Celulite reduziu visivelmente em duas semanas de uso. Pele muito mais lisa e hidratada o dia todo."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Garantia -->
+  <section id="garantia">
+    <div class="container garantia-box">
+      <i class="fas fa-shield-alt"></i>
+      <h2 class="section-title">Compra 100% Segura</h2>
+      <p class="section-subtitle">Sua satisfação é nossa prioridade. O pagamento é processado com segurança via PIX. Entrega rápida para todo o Brasil com rastreamento.</p>
+      <a href="#oferta" class="cta-button">QUERO MEU LISA BUMBUM</a>
+    </div>
+  </section>
+
+</main>
+
 <footer>
-  <div class="wrap">
-    <div style="margin-bottom:10px; font-weight:700; font-size:13px; letter-spacing:0.06em; color:rgba(255,255,255,0.6);">LISA BUMBUM</div>
-    © 2026 Lisa Bumbum. Todos os direitos reservados.
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Lisa Bumbum</h4>
+        <a href="#">Sobre nós</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ajuda</h4>
+        <a href="#">Trocas e Devoluções</a>
+        <a href="#">Perguntas Frequentes</a>
+        <a href="#">Como Comprar</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <p>Seg. a Sex. das 9h às 18h</p>
+        <p>contato@lisabumbum.com.br</p>
+      </div>
+      <div class="footer-col">
+        <h4>Siga a gente</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Lisa Bumbum — Todos os direitos reservados.</div>
   </div>
 </footer>
 
-<!-- Sticky CTA -->
-<div class="sticky-cta">
-  <div class="sticky-info">
-    <div class="sticky-kit" id="sticky-kit-label">2 frascos selecionados</div>
-    <div class="sticky-price" id="sticky-kit-preco">R$ 39,99</div>
+<!-- Painel carrinho -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-panel" id="cart-panel">
+  <div class="cart-header">
+    <h3>Seu Carrinho</h3>
+    <span class="cart-close" id="cart-close">✕</span>
   </div>
-  <button class="sticky-btn" onclick="abrirCarrinho()">Comprar Agora</button>
+  <div class="cart-body" id="cart-body">
+    <div class="cart-empty">
+      <i class="fas fa-shopping-bag"></i>
+      <p>Seu carrinho está vazio.</p>
+    </div>
+  </div>
+  <div class="cart-footer-panel" id="cart-footer" style="display:none;">
+    <div class="cart-totals">
+      <div class="cart-totals-row"><span>Subtotal</span><span id="cart-sub">R$ 0,00</span></div>
+      <div class="cart-totals-row"><span>Frete</span><span>R$ 7,00</span></div>
+      <div class="cart-totals-row total"><span>Total</span><span class="total-price" id="cart-total">R$ 0,00</span></div>
+    </div>
+    <button class="btn-checkout" onclick="abrirCheckout()">Finalizar Compra →</button>
+  </div>
 </div>
 
-<!-- ════════════════════════════
-     CHECKOUT OVERLAY
-════════════════════════════ -->
+<!-- Modal checkout -->
 <div class="ck-overlay" id="ck-overlay">
   <div class="ck-panel">
-
-    <div class="ck-header">
-      <div class="ck-title" id="ck-titulo">Seu carrinho</div>
-      <button class="ck-close" onclick="fecharCarrinho()">✕</button>
+    <div class="ck-head">
+      <span class="ck-head-title" id="ck-title">Finalize seu pedido</span>
+      <button class="ck-close" onclick="fecharCheckout()">✕</button>
     </div>
-
     <div class="ck-steps">
-      <div class="ck-step ativo" id="ck-s1">Carrinho</div>
-      <div class="ck-step" id="ck-s2">Entrega</div>
-      <div class="ck-step" id="ck-s3">Pagamento</div>
+      <div class="ck-step active" id="ck-s1">Entrega</div>
+      <div class="ck-step" id="ck-s2">Pagamento</div>
+      <div class="ck-step" id="ck-s3">Confirmação</div>
     </div>
+    <div class="ck-body">
 
-    <!-- Etapa 1: Carrinho -->
-    <div class="ck-etapa ativa" id="ck-etapa1">
-      <div class="cart-item">
-        <div class="cart-item-name" id="cart-nome">Lisa Bumbum — 2 Frascos</div>
-        <div class="cart-item-price" id="cart-preco">R$ 39,99</div>
-      </div>
-      <div class="cart-row"><span>Subtotal</span><span id="cart-sub">R$ 39,99</span></div>
-      <div class="cart-row"><span>Frete</span><span id="cart-frete">R$ 7,00</span></div>
-      <div class="cart-row total"><span>Total</span><span class="cart-total-val" id="cart-total">R$ 46,99</span></div>
-      <div class="ck-nav" style="border-top:none; padding-top:8px;">
-        <button class="btn-next" onclick="avancarEtapa1()">Continuar →</button>
-      </div>
-    </div>
-
-    <!-- Etapa 2: Entrega -->
-    <div class="ck-etapa" id="ck-etapa2">
-      <div class="form-field">
-        <label>Nome completo <span class="obrig">*</span></label>
-        <input id="f-nome" type="text" class="form-input" placeholder="Seu nome" autocomplete="name" />
-      </div>
-      <div class="form-row">
-        <div class="form-field">
-          <label>Telefone <span class="obrig">*</span></label>
-          <input id="f-tel" type="tel" class="form-input" placeholder="(11) 99999-9999" inputmode="numeric" />
+      <!-- Etapa 1: Entrega -->
+      <div class="ck-stage show" id="ck-e1">
+        <div class="ck-cart-summary">
+          <div class="ck-cart-row"><span id="ck-item-name">Lisa Bumbum — 2 Frascos</span><span id="ck-item-price">R$ 39,99</span></div>
+          <div class="ck-cart-row"><span>Frete</span><span>R$ 7,00</span></div>
+          <div class="ck-cart-row total-row"><span>Total</span><span class="total-price" id="ck-total">R$ 46,99</span></div>
         </div>
-        <div class="form-field">
-          <label>CPF <span class="obrig">*</span></label>
-          <input id="f-cpf" type="text" class="form-input" placeholder="000.000.000-00" inputmode="numeric" maxlength="14" />
+        <div class="form-group">
+          <label>Nome completo <span class="obrig">*</span></label>
+          <input id="f-nome" type="text" class="form-input" placeholder="Seu nome" autocomplete="name" />
         </div>
-      </div>
-      <div class="form-field">
-        <label>E-mail <span class="obrig">*</span></label>
-        <input id="f-email" type="email" class="form-input" placeholder="seu@email.com" autocomplete="email" />
-      </div>
-      <div class="form-field">
-        <label>CEP <span class="obrig">*</span></label>
-        <div class="cep-row">
-          <input id="f-cep" type="text" class="form-input" placeholder="00000-000" inputmode="numeric" maxlength="9" />
-          <button class="btn-cep" id="btn-cep" onclick="buscarCep()">Buscar</button>
+        <div class="form-row2">
+          <div class="form-group">
+            <label>Telefone <span class="obrig">*</span></label>
+            <input id="f-tel" type="tel" class="form-input" placeholder="(11) 99999-9999" inputmode="numeric" />
+          </div>
+          <div class="form-group">
+            <label>CPF <span class="obrig">*</span></label>
+            <input id="f-cpf" type="text" class="form-input" placeholder="000.000.000-00" inputmode="numeric" maxlength="14" />
+          </div>
         </div>
-      </div>
-      <div class="form-field">
-        <label>Rua / Avenida <span class="obrig">*</span></label>
-        <input id="f-rua" type="text" class="form-input" placeholder="Nome da rua" />
-      </div>
-      <div class="form-row">
-        <div class="form-field">
-          <label>Número <span class="obrig">*</span></label>
-          <input id="f-num" type="text" class="form-input" placeholder="123" inputmode="numeric" />
+        <div class="form-group">
+          <label>E-mail <span class="obrig">*</span></label>
+          <input id="f-email" type="email" class="form-input" placeholder="seu@email.com" autocomplete="email" />
         </div>
-        <div class="form-field">
-          <label>Complemento</label>
-          <input id="f-comp" type="text" class="form-input" placeholder="Apto, Bloco…" />
+        <div class="form-group">
+          <label>CEP <span class="obrig">*</span></label>
+          <div class="cep-group">
+            <input id="f-cep" type="text" class="form-input" placeholder="00000-000" inputmode="numeric" maxlength="9" />
+            <button class="btn-cep" id="btn-cep" onclick="buscarCep()">Buscar</button>
+          </div>
         </div>
-      </div>
-      <div class="form-field">
-        <label>Bairro <span class="obrig">*</span></label>
-        <input id="f-bairro" type="text" class="form-input" placeholder="Seu bairro" />
-      </div>
-      <div class="form-row">
-        <div class="form-field">
-          <label>Cidade <span class="obrig">*</span></label>
-          <input id="f-cidade" type="text" class="form-input" placeholder="Sua cidade" />
+        <div class="form-group">
+          <label>Endereço <span class="obrig">*</span></label>
+          <input id="f-rua" type="text" class="form-input" placeholder="Rua / Avenida" />
         </div>
-        <div class="form-field">
+        <div class="form-row2">
+          <div class="form-group">
+            <label>Número <span class="obrig">*</span></label>
+            <input id="f-num" type="text" class="form-input" placeholder="123" inputmode="numeric" />
+          </div>
+          <div class="form-group">
+            <label>Complemento</label>
+            <input id="f-comp" type="text" class="form-input" placeholder="Apto, Bloco…" />
+          </div>
+        </div>
+        <div class="form-row2">
+          <div class="form-group">
+            <label>Bairro <span class="obrig">*</span></label>
+            <input id="f-bairro" type="text" class="form-input" placeholder="Bairro" />
+          </div>
+          <div class="form-group">
+            <label>Cidade <span class="obrig">*</span></label>
+            <input id="f-cidade" type="text" class="form-input" placeholder="Cidade" />
+          </div>
+        </div>
+        <div class="form-group">
           <label>Estado <span class="obrig">*</span></label>
           <select id="f-estado" class="form-input">
-            <option value="">UF</option>
+            <option value="">Selecione</option>
             <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
             <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
             <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
@@ -1151,65 +748,61 @@ select.form-input { cursor: pointer; }
             <option selected>SP</option><option>SE</option><option>TO</option>
           </select>
         </div>
-      </div>
-      <div class="ck-nav">
-        <button class="btn-back" onclick="irParaEtapa(1); document.getElementById('ck-titulo').textContent='Seu carrinho';">← Voltar</button>
-        <button class="btn-next" onclick="avancarEtapa2()">Ir para pagamento →</button>
-      </div>
-    </div>
-
-    <!-- Etapa 3: PIX -->
-    <div class="ck-etapa" id="ck-etapa3">
-      <div class="pix-box">
-        <div class="pix-valor" id="pix-valor">R$ 46,99</div>
-        <div class="pix-desc">Pague via PIX — confirmação imediata</div>
-
-        <div id="pix-carregando" class="pix-loader">
-          <div class="pix-spinner"></div>
-          <p>Gerando seu QR Code…</p>
+        <div class="ck-actions">
+          <button class="btn-next" onclick="avancarEtapa1()">Ir para pagamento →</button>
         </div>
+      </div>
 
-        <div id="pix-gerado">
-          <div id="pix-qrcode"></div>
-          <div class="pix-chave-box" id="pix-chave"></div>
-          <button class="btn-copy" id="btn-copy" onclick="copiarPix()">Copiar código PIX</button>
-          <div class="pix-steps">
-            <p><span class="pix-step-n">1</span>Abra o app do banco e acesse o PIX</p>
-            <p><span class="pix-step-n">2</span>Escolha "Pix Copia e Cola" ou escaneie o QR</p>
-            <p><span class="pix-step-n">3</span>Confirme o valor e finalize o pagamento</p>
-            <p><span class="pix-step-n">4</span>Pedido confirmado automaticamente</p>
+      <!-- Etapa 2: PIX -->
+      <div class="ck-stage" id="ck-e2">
+        <div class="pix-wrap">
+          <div class="pix-amount" id="pix-amount">R$ 46,99</div>
+          <p class="pix-sub">Pague via PIX — confirmação imediata</p>
+          <div id="pix-loading" class="pix-loading">
+            <div class="pix-spinner"></div>
+            <p>Gerando seu QR Code…</p>
+          </div>
+          <div id="pix-qr-wrap">
+            <div id="pix-qrcode"></div>
+            <div class="pix-code-box" id="pix-code"></div>
+            <button class="btn-pix-copy" id="btn-copy" onclick="copiarPix()">Copiar Código PIX</button>
+            <div class="pix-steps-list">
+              <div class="pix-step"><span class="pix-step-n">1</span>Abra o app do seu banco e acesse o PIX</div>
+              <div class="pix-step"><span class="pix-step-n">2</span>Escolha "PIX Copia e Cola" ou escaneie o QR</div>
+              <div class="pix-step"><span class="pix-step-n">3</span>Confirme o valor e finalize o pagamento</div>
+              <div class="pix-step"><span class="pix-step-n">4</span>Pedido confirmado automaticamente em segundos</div>
+            </div>
+          </div>
+          <div id="pix-error">
+            <div style="font-size:2em">⚠</div>
+            <p id="pix-error-msg"></p>
+            <button class="btn-retry" onclick="tentarNovamente()">Tentar novamente</button>
           </div>
         </div>
-
-        <div id="pix-erro">
-          <div style="font-size:1.6rem;">⚠</div>
-          <p id="pix-erro-msg"></p>
-          <button class="btn-retry" onclick="tentarNovamente()">Tentar novamente</button>
+        <div class="ck-actions" style="margin-top:20px;">
+          <button class="btn-back" onclick="irEtapa(1)">← Voltar</button>
         </div>
       </div>
-      <div class="ck-nav" style="margin-top:20px;">
-        <button class="btn-back" onclick="irParaEtapa(2); document.getElementById('ck-titulo').textContent='Dados de entrega';">← Voltar</button>
-      </div>
-    </div>
 
-    <!-- Etapa 4: Confirmação -->
-    <div class="ck-etapa" id="ck-etapa4">
-      <div class="ck-done">
-        <div class="ck-done-icon">✅</div>
-        <h3>Pedido recebido!</h3>
-        <p>Realize o pagamento PIX para confirmarmos o envio.<br>Assim que identificado, você receberá a confirmação por e-mail.</p>
-        <button class="btn-done" onclick="fecharCarrinho()">Fechar</button>
+      <!-- Etapa 3: Confirmação -->
+      <div class="ck-stage" id="ck-e3">
+        <div class="done-wrap">
+          <div class="done-icon">✅</div>
+          <h3>Pedido Recebido!</h3>
+          <p>Realize o pagamento PIX para confirmarmos o envio. Você receberá a confirmação por e-mail assim que identificado.</p>
+          <button class="btn-done" onclick="fecharCheckout()">Fechar</button>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
 
 <script>
 var KITS = {
-  1: { qtd:1, preco:23.99, label:'1 Frasco',   de:'De R$ 49,90' },
-  2: { qtd:2, preco:39.99, label:'2 Frascos',  de:'De R$ 79,90' },
-  3: { qtd:3, preco:54.99, label:'3 Frascos',  de:'De R$ 109,90' }
+  1: { qtd:1, preco:23.99, label:'1 Frasco',  de:'R$ 49,90', install:'ou 2x de R$ 11,99 sem juros' },
+  2: { qtd:2, preco:39.99, label:'2 Frascos', de:'R$ 79,90', install:'ou 2x de R$ 19,99 sem juros' },
+  3: { qtd:3, preco:54.99, label:'3 Frascos', de:'R$ 109,90',install:'ou 3x de R$ 18,33 sem juros' }
 };
 var FRETE = 7.00;
 var kitAtual = 2;
@@ -1220,174 +813,157 @@ function fmt(v) { return 'R$ ' + v.toFixed(2).replace('.',','); }
 
 function selecionarKit(n) {
   kitAtual = n;
-  document.querySelectorAll('.kit-card').forEach(function(el){ el.classList.remove('selected'); });
-  document.getElementById('kit-' + n).classList.add('selected');
   var k = KITS[n];
-  document.getElementById('sticky-kit-label').textContent = k.label + ' selecionado' + (n > 1 ? 's' : '');
-  document.getElementById('sticky-kit-preco').textContent = fmt(k.preco);
+  document.querySelectorAll('.kit-opt').forEach(function(el){ el.classList.remove('active'); });
+  document.getElementById('kopt-' + n).classList.add('active');
+  document.getElementById('display-price').textContent = fmt(k.preco);
+  document.getElementById('display-install').textContent = k.install;
 }
 
 function abrirCarrinho() {
-  etapaAtual = 1;
-  atualizarCarrinho();
-  renderSteps();
-  document.getElementById('ck-titulo').textContent = 'Seu carrinho';
-  document.getElementById('ck-overlay').classList.add('aberto');
-  document.body.style.overflow = 'hidden';
   var k = KITS[kitAtual];
+  var total = k.preco + FRETE;
+  document.getElementById('cart-body').innerHTML =
+    '<div class="cart-line-item">' +
+    '<div class="cart-line-img">🍑</div>' +
+    '<div class="cart-line-info">' +
+    '<div class="cart-line-name">Lisa Bumbum — ' + k.label + '</div>' +
+    '<div class="cart-line-price">' + fmt(k.preco) + '</div>' +
+    '</div></div>';
+  document.getElementById('cart-sub').textContent   = fmt(k.preco);
+  document.getElementById('cart-total').textContent = fmt(total);
+  document.getElementById('cart-footer').style.display = 'block';
+  document.getElementById('cart-badge').textContent = '1';
+  document.getElementById('cart-badge').classList.add('show');
+  document.getElementById('cart-panel').classList.add('active');
+  document.getElementById('cart-overlay').classList.add('active');
   _fbTrack('AddToCart', {
     content_ids:  ['lisa-bumbum-kit-' + kitAtual],
     content_name: 'Lisa Bumbum — ' + k.label,
     content_type: 'product',
-    value:        k.preco,
-    currency:     'BRL',
-    num_items:    k.qtd
+    value: k.preco, currency: 'BRL', num_items: k.qtd
   });
 }
 
 function fecharCarrinho() {
-  document.getElementById('ck-overlay').classList.remove('aberto');
-  document.body.style.overflow = '';
+  document.getElementById('cart-panel').classList.remove('active');
+  document.getElementById('cart-overlay').classList.remove('active');
 }
 
-function atualizarCarrinho() {
+function abrirCheckout() {
+  fecharCarrinho();
   var k = KITS[kitAtual];
   var total = k.preco + FRETE;
-  document.getElementById('cart-nome').textContent  = 'Lisa Bumbum — ' + k.label;
-  document.getElementById('cart-preco').textContent = fmt(k.preco);
-  document.getElementById('cart-sub').textContent   = fmt(k.preco);
-  document.getElementById('cart-frete').textContent = fmt(FRETE);
-  document.getElementById('cart-total').textContent = fmt(total);
-  document.getElementById('pix-valor').textContent  = fmt(total);
-}
-
-function renderSteps() {
-  var steps = ['ck-s1','ck-s2','ck-s3'];
-  var etapas = ['ck-etapa1','ck-etapa2','ck-etapa3','ck-etapa4'];
-  steps.forEach(function(id, i) {
-    var el = document.getElementById(id);
-    if (!el) return;
-    el.classList.remove('ativo','feito');
-    if (i + 1 === etapaAtual) el.classList.add('ativo');
-    if (i + 1 < etapaAtual)   el.classList.add('feito');
-  });
-  etapas.forEach(function(id, i) {
-    var el = document.getElementById(id);
-    if (!el) return;
-    el.classList.toggle('ativa', i + 1 === etapaAtual);
-  });
-}
-
-function irParaEtapa(n) {
-  etapaAtual = n;
-  renderSteps();
-  document.querySelector('.ck-panel').scrollTop = 0;
-}
-
-function avancarEtapa1() {
-  irParaEtapa(2);
-  document.getElementById('ck-titulo').textContent = 'Dados de entrega';
-  var k = KITS[kitAtual];
+  document.getElementById('ck-item-name').textContent  = 'Lisa Bumbum — ' + k.label;
+  document.getElementById('ck-item-price').textContent = fmt(k.preco);
+  document.getElementById('ck-total').textContent      = fmt(total);
+  document.getElementById('pix-amount').textContent    = fmt(total);
+  irEtapa(1);
+  document.getElementById('ck-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
   _fbTrack('InitiateCheckout', {
     content_ids:  ['lisa-bumbum-kit-' + kitAtual],
     content_name: 'Lisa Bumbum — ' + k.label,
     content_type: 'product',
-    value:        k.preco + FRETE,
-    currency:     'BRL',
-    num_items:    k.qtd
+    value: total, currency: 'BRL', num_items: KITS[kitAtual].qtd
   });
 }
 
-function validarEtapa2() {
-  var ok = true;
-  var campos = ['f-nome','f-cpf','f-email','f-tel','f-cep','f-rua','f-num','f-bairro','f-cidade'];
-  campos.forEach(function(id) {
-    var el = document.getElementById(id);
-    var vazio = !el.value.trim();
-    el.classList.toggle('erro', vazio);
-    if (vazio) ok = false;
+function fecharCheckout() {
+  document.getElementById('ck-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function irEtapa(n) {
+  etapaAtual = n;
+  ['ck-e1','ck-e2','ck-e3'].forEach(function(id, i) {
+    document.getElementById(id).classList.toggle('show', i + 1 === n);
   });
-  var estado = document.getElementById('f-estado');
-  if (!estado.value) { estado.classList.add('erro'); ok = false; }
-  else estado.classList.remove('erro');
-  var cpf = document.getElementById('f-cpf').value.replace(/\D/g,'');
-  if (cpf.length !== 11) {
-    document.getElementById('f-cpf').classList.add('erro'); ok = false;
+  ['ck-s1','ck-s2','ck-s3'].forEach(function(id, i) {
+    var el = document.getElementById(id);
+    el.classList.remove('active','done');
+    if (i + 1 === n) el.classList.add('active');
+    if (i + 1 < n)  el.classList.add('done');
+  });
+  document.querySelector('.ck-panel').scrollTop = 0;
+  var titles = { 1:'Dados de entrega', 2:'Pagamento PIX', 3:'Pedido confirmado' };
+  document.getElementById('ck-title').textContent = titles[n];
+}
+
+function validarEtapa1() {
+  var ok = true;
+  ['f-nome','f-cpf','f-email','f-tel','f-cep','f-rua','f-num','f-bairro','f-cidade'].forEach(function(id) {
+    var el = document.getElementById(id);
+    var empty = !el.value.trim();
+    el.classList.toggle('err', empty);
+    if (empty) ok = false;
+  });
+  var est = document.getElementById('f-estado');
+  if (!est.value) { est.classList.add('err'); ok = false; }
+  else est.classList.remove('err');
+  if (document.getElementById('f-cpf').value.replace(/\D/g,'').length !== 11) {
+    document.getElementById('f-cpf').classList.add('err'); ok = false;
   }
   if (!ok) document.querySelector('.ck-panel').scrollTop = 0;
   return ok;
 }
 
-function avancarEtapa2() {
-  if (!validarEtapa2()) return;
-  irParaEtapa(3);
-  document.getElementById('ck-titulo').textContent = 'Pagamento';
-  document.getElementById('pix-carregando').style.display = 'flex';
-  document.getElementById('pix-gerado').style.display     = 'none';
-  document.getElementById('pix-erro').style.display       = 'none';
-  finalizarPedido();
+function avancarEtapa1() {
+  if (!validarEtapa1()) return;
+  irEtapa(2);
+  document.getElementById('pix-loading').style.display = 'flex';
+  document.getElementById('pix-qr-wrap').style.display = 'none';
+  document.getElementById('pix-error').style.display   = 'none';
+  gerarPix();
 }
 
-function finalizarPedido() {
-  var k = KITS[kitAtual];
+function gerarPix() {
+  var k     = KITS[kitAtual];
   var total = k.preco + FRETE;
-  var evId = _fbUUID();
+  var evId  = _fbUUID();
 
   _fbTrack('Purchase', {
-    value:        total,
-    currency:     'BRL',
+    value: total, currency: 'BRL',
     content_ids:  ['lisa-bumbum-kit-' + kitAtual],
     content_name: 'Lisa Bumbum — ' + k.label,
-    content_type: 'product',
-    num_items:    k.qtd
+    content_type: 'product', num_items: k.qtd
   }, { eventID: evId });
 
   fetch('/api/criar-pagamento', {
-    method:  'POST',
+    method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      nome:                document.getElementById('f-nome').value,
-      email:               document.getElementById('f-email').value,
-      cpf:                 document.getElementById('f-cpf').value,
-      tel:                 document.getElementById('f-tel').value,
-      kit_label:           k.label,
-      kit_id:              kitAtual,
-      kit_qtd:             k.qtd,
-      total:               total,
-      fb_event_id:         evId,
-      fb_fbc:              _fbCookie('_fbc'),
-      fb_fbp:              _fbCookie('_fbp'),
-      fb_event_source_url: window.location.href,
-      fb_user_agent:       navigator.userAgent
+      nome:  document.getElementById('f-nome').value,
+      email: document.getElementById('f-email').value,
+      cpf:   document.getElementById('f-cpf').value,
+      tel:   document.getElementById('f-tel').value,
+      kit_label: k.label, kit_id: kitAtual, kit_qtd: k.qtd, total: total,
+      fb_event_id: evId, fb_fbc: _fbCookie('_fbc'), fb_fbp: _fbCookie('_fbp'),
+      fb_event_source_url: window.location.href, fb_user_agent: navigator.userAgent
     })
   })
   .then(function(r){ return r.json(); })
   .then(function(data) {
-    document.getElementById('pix-carregando').style.display = 'none';
+    document.getElementById('pix-loading').style.display = 'none';
     if (!data.ok) throw new Error(data.erro || 'Erro ao gerar PIX.');
     pixCopyText = data.qr_code_text;
     var el = document.getElementById('pix-qrcode');
     el.innerHTML = '';
-    new QRCode(el, {
-      text:         data.qr_code_text,
-      width:        200, height: 200,
-      colorDark:    '#000', colorLight: '#fff',
-      correctLevel: QRCode.CorrectLevel.L
-    });
-    document.getElementById('pix-chave').textContent = data.qr_code_text;
-    document.getElementById('pix-gerado').style.display = 'block';
+    new QRCode(el, { text: data.qr_code_text, width:200, height:200, colorDark:'#000', colorLight:'#fff', correctLevel: QRCode.CorrectLevel.L });
+    document.getElementById('pix-code').textContent = data.qr_code_text;
+    document.getElementById('pix-qr-wrap').style.display = 'block';
   })
   .catch(function(err) {
-    document.getElementById('pix-carregando').style.display = 'none';
-    document.getElementById('pix-erro-msg').textContent = err.message || 'Erro ao gerar PIX. Tente novamente.';
-    document.getElementById('pix-erro').style.display = 'block';
+    document.getElementById('pix-loading').style.display   = 'none';
+    document.getElementById('pix-error-msg').textContent   = err.message || 'Erro ao gerar PIX. Tente novamente.';
+    document.getElementById('pix-error').style.display     = 'block';
   });
 }
 
 function tentarNovamente() {
-  document.getElementById('pix-erro').style.display       = 'none';
-  document.getElementById('pix-carregando').style.display = 'flex';
-  finalizarPedido();
+  document.getElementById('pix-error').style.display   = 'none';
+  document.getElementById('pix-loading').style.display = 'flex';
+  gerarPix();
 }
 
 function copiarPix() {
@@ -1395,17 +971,15 @@ function copiarPix() {
   var btn = document.getElementById('btn-copy');
   if (navigator.clipboard) {
     navigator.clipboard.writeText(pixCopyText).then(function() {
-      btn.textContent = '✓ Código copiado!';
-      btn.classList.add('copied');
-      setTimeout(function(){ btn.textContent = 'Copiar código PIX'; btn.classList.remove('copied'); }, 2500);
+      btn.textContent = '✓ CÓDIGO COPIADO!'; btn.classList.add('copied');
+      setTimeout(function(){ btn.textContent = 'Copiar Código PIX'; btn.classList.remove('copied'); }, 2500);
     });
   } else {
     var ta = document.createElement('textarea');
-    ta.value = pixCopyText;
-    document.body.appendChild(ta); ta.select();
+    ta.value = pixCopyText; document.body.appendChild(ta); ta.select();
     document.execCommand('copy'); document.body.removeChild(ta);
-    btn.textContent = '✓ Código copiado!';
-    setTimeout(function(){ btn.textContent = 'Copiar código PIX'; }, 2500);
+    btn.textContent = '✓ CÓDIGO COPIADO!';
+    setTimeout(function(){ btn.textContent = 'Copiar Código PIX'; }, 2500);
   }
 }
 
@@ -1428,46 +1002,45 @@ function buscarCep() {
     .finally(function(){ btn.textContent = 'Buscar'; btn.disabled = false; });
 }
 
-function toggleFaq(el) {
-  var item = el.parentElement;
+function toggleAcc(header) {
+  var item = header.parentElement;
   item.classList.toggle('open');
+  var body = item.querySelector('.acc-body');
+  body.style.maxHeight = item.classList.contains('open') ? body.scrollHeight + 'px' : '0px';
 }
+
+document.getElementById('btn-add').addEventListener('click', abrirCarrinho);
+document.getElementById('cart-icon').addEventListener('click', function() {
+  if (document.getElementById('cart-panel').classList.contains('active')) fecharCarrinho();
+  else abrirCarrinho();
+});
+document.getElementById('cart-close').addEventListener('click', fecharCarrinho);
+document.getElementById('cart-overlay').addEventListener('click', fecharCarrinho);
+document.getElementById('ck-overlay').addEventListener('click', function(e) {
+  if (e.target === this) fecharCheckout();
+});
 
 document.getElementById('f-tel').addEventListener('input', function() {
   var v = this.value.replace(/\D/g,'');
-  if (v.length <= 10) v = v.replace(/(\d{2})(\d{4})(\d{0,4})/,'($1) $2-$3');
-  else v = v.replace(/(\d{2})(\d{5})(\d{0,4})/,'($1) $2-$3');
-  this.value = v;
+  this.value = v.length <= 10 ? v.replace(/(\d{2})(\d{4})(\d{0,4})/,'($1) $2-$3') : v.replace(/(\d{2})(\d{5})(\d{0,4})/,'($1) $2-$3');
 });
-
 document.getElementById('f-cpf').addEventListener('input', function() {
   var v = this.value.replace(/\D/g,'');
-  v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/,'$1.$2.$3-$4');
-  this.value = v;
+  this.value = v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/,'$1.$2.$3-$4');
 });
-
 document.getElementById('f-cep').addEventListener('input', function() {
   var v = this.value.replace(/\D/g,'');
-  if (v.length > 5) v = v.slice(0,5) + '-' + v.slice(5,8);
-  this.value = v;
+  this.value = v.length > 5 ? v.slice(0,5) + '-' + v.slice(5,8) : v;
 });
 
-document.getElementById('ck-overlay').addEventListener('click', function(e) {
-  if (e.target === this) fecharCarrinho();
-});
-
-document.querySelectorAll('.vc').forEach(function(card) {
+document.querySelectorAll('.influencer-card').forEach(function(card) {
   var video = card.querySelector('video');
   card.addEventListener('click', function() {
     if (video.paused) {
-      document.querySelectorAll('.vc video').forEach(function(v){ if (v !== video) v.pause(); });
-      document.querySelectorAll('.vc').forEach(function(c){ c.classList.remove('playing'); });
-      video.play();
-      card.classList.add('playing');
-    } else {
-      video.pause();
-      card.classList.remove('playing');
-    }
+      document.querySelectorAll('.influencer-card video').forEach(function(v){ if (v !== video) v.pause(); });
+      document.querySelectorAll('.influencer-card').forEach(function(c){ c.classList.remove('playing'); });
+      video.play(); card.classList.add('playing');
+    } else { video.pause(); card.classList.remove('playing'); }
   });
   video.addEventListener('pause', function(){ card.classList.remove('playing'); });
   video.addEventListener('play',  function(){ card.classList.add('playing'); });
@@ -1475,26 +1048,18 @@ document.querySelectorAll('.vc').forEach(function(card) {
 
 if ('IntersectionObserver' in window) {
   var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.preload = 'metadata'; obs.unobserve(e.target); }
-    });
-  }, { rootMargin: '300px' });
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.preload = 'metadata'; obs.unobserve(e.target); } });
+  }, { rootMargin:'300px' });
   document.querySelectorAll('video[preload="none"]').forEach(function(v){ obs.observe(v); });
 }
 
 function _fbUUID() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random()*16|0;
-    return (c==='x'?r:(r&0x3|0x8)).toString(16);
+    var r = Math.random()*16|0; return (c==='x'?r:(r&0x3|0x8)).toString(16);
   });
 }
-function _fbCookie(n) {
-  var v = document.cookie.match('(^|;) ?'+n+'=([^;]*)(;|$)');
-  return v ? v[2] : '';
-}
-function _fbTrack(event, params, extra) {
-  if (typeof fbq !== 'undefined') fbq('track', event, params, extra);
-}
+function _fbCookie(n) { var v = document.cookie.match('(^|;) ?'+n+'=([^;]*)(;|$)'); return v ? v[2] : ''; }
+function _fbTrack(event, params, extra) { if (typeof fbq !== 'undefined') fbq('track', event, params, extra); }
 </script>
 </body>
 </html>
