@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lisa Bumbum — Creme Firmador Viral do TikTok</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1350679366463627');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1350679366463627&ev=PageView&noscript=1"/></noscript>
+<style>
+:root {
+  --bg: #06000E;
+  --bg2: #0E0018;
+  --pink: #FF2D78;
+  --pink-light: #FF6B9D;
+  --pink-pale: rgba(255,45,120,0.12);
+  --gold: #FFD700;
+  --gold-light: #FFE566;
+  --text: #F8F0FF;
+  --muted: #9080B0;
+  --card: #110020;
+  --card-border: rgba(255,45,120,0.18);
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  padding-bottom: 80px;
+}
+@keyframes pisca {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes brilho {
+  0%,100% { box-shadow: 0 0 16px rgba(255,45,120,0.4); }
+  50% { box-shadow: 0 0 32px rgba(255,45,120,0.8), 0 0 60px rgba(255,45,120,0.3); }
+}
+.top-bar {
+  background: var(--pink);
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  letter-spacing: 0.02em;
+}
+.hero {
+  background: linear-gradient(180deg, #0E0018 0%, var(--bg) 100%);
+  padding: 48px 20px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: 50%; transform: translateX(-50%);
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(255,45,120,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.logo {
+  font-size: clamp(40px, 10vw, 72px);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.logo-lisa { color: var(--pink); }
+.logo-bumbum { color: var(--gold); }
+.badge-viral {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--pink), var(--pink-light));
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 20px rgba(255,45,120,0.5);
+  animation: brilho 2s infinite;
+}
+.hero h1 {
+  font-size: clamp(22px, 6vw, 40px);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-sub {
+  color: var(--muted);
+  font-size: clamp(14px, 3vw, 18px);
+  max-width: 480px;
+  margin: 0 auto 20px;
+}
+.stars {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.stars-sub {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+.btn-cta {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--pink), var(--pink-light));
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 18px 40px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 32px rgba(255,45,120,0.45);
+  width: 100%;
+  max-width: 400px;
+}
+.btn-cta:hover { transform: scale(1.03); box-shadow: 0 8px 48px rgba(255,45,120,0.6); }
+.hero-checks {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.hero-checks span { margin: 0 8px; }
+.strip {
+  background: var(--bg2);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  padding: 28px 16px;
+  gap: 8px;
+}
+.strip-item strong {
+  display: block;
+  font-size: clamp(22px, 5vw, 36px);
+  font-weight: 900;
+  color: var(--pink);
+}
+.strip-item span {
+  font-size: 12px;
+  color: var(--muted);
+}
+section { padding: 56px 20px; max-width: 900px; margin: 0 auto; }
+.sec-title {
+  font-size: clamp(20px, 5vw, 32px);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.sec-title span { color: var(--pink); }
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.video-wrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 9/16;
+  background: #1a0030;
+  cursor: pointer;
+}
+.video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.play-icon {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 56px; height: 56px;
+  background: rgba(255,45,120,0.85);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.play-icon svg { width: 24px; height: 24px; fill: #fff; margin-left: 4px; }
+.video-wrap.playing .play-icon { opacity: 0; }
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.benefit-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px 20px;
+  transition: border-color 0.2s;
+}
+.benefit-card:hover { border-color: var(--pink); }
+.benefit-icon { font-size: 28px; margin-bottom: 10px; }
+.benefit-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--pink); }
+.benefit-card p { font-size: 14px; color: var(--muted); }
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px 20px;
+}
+.step-num {
+  background: linear-gradient(135deg, var(--pink), var(--pink-light));
+  color: #fff;
+  font-weight: 900;
+  font-size: 20px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.step h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.step p { font-size: 14px; color: var(--muted); }
+.kits-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.kit-card {
+  background: var(--card);
+  border: 2px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+.kit-card.ativo {
+  border-color: var(--pink);
+  background: rgba(255,45,120,0.07);
+}
+.kit-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #000;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+.kit-name { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+.kit-label { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.kit-preco strong { font-size: 28px; font-weight: 900; color: var(--pink); }
+.kit-de { font-size: 13px; color: var(--muted); text-decoration: line-through; margin-left: 8px; }
+.btn-add {
+  width: 100%;
+  background: linear-gradient(90deg, var(--pink), var(--pink-light));
+  color: #fff;
+  border: none;
+  border-radius: 60px;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 18px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 32px rgba(255,45,120,0.45);
+}
+.btn-add:hover { transform: scale(1.02); box-shadow: 0 8px 48px rgba(255,45,120,0.6); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 20px;
+}
+.review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.review-name { font-weight: 700; font-size: 14px; }
+.review-city { font-size: 12px; color: var(--muted); }
+.review-verified { font-size: 11px; color: #4ade80; font-weight: 600; }
+.review-stars { font-size: 14px; margin-bottom: 8px; }
+.review-text { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.urgency {
+  text-align: center;
+  border: 2px solid var(--pink);
+  border-radius: 20px;
+  padding: 40px 24px;
+  animation: brilho 2s infinite;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.urgency-title {
+  font-size: clamp(18px, 4vw, 28px);
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: var(--gold);
+}
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 18px 20px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.faq-arrow {
+  font-size: 18px;
+  transition: transform 0.25s;
+  flex-shrink: 0;
+  color: var(--pink);
+}
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 0 20px;
+}
+.faq-item.open .faq-a {
+  max-height: 300px;
+  padding: 0 20px 18px;
+}
+.sticky-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--bg2);
+  border-top: 1px solid var(--card-border);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 100;
+}
+.sticky-logo {
+  font-weight: 900;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.sticky-logo .sl { color: var(--pink); }
+.sticky-logo .sb { color: var(--gold); }
+.sticky-price {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--pink);
+}
+.btn-sticky {
+  background: linear-gradient(90deg, var(--pink), var(--pink-light));
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 12px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s;
+}
+.btn-sticky:hover { transform: scale(1.03); }
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 32px 20px 40px;
+  border-top: 1px solid var(--card-border);
+}
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 200;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+}
+.overlay.aberto { display: flex; }
+.checkout-panel {
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 480px;
+  padding: 28px 24px;
+  position: relative;
+  animation: fadeIn 0.25s ease;
+  margin: auto;
+}
+.checkout-close {
+  position: absolute;
+  top: 16px; right: 20px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+}
+.checkout-title {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  padding-right: 32px;
+}
+.steps-indicator {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.step-dot {
+  height: 4px;
+  flex: 1;
+  background: rgba(255,45,120,0.2);
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.step-dot.ativo { background: var(--pink); }
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 15px;
+}
+.cart-item:last-child { border-bottom: none; }
+.cart-total {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--pink);
+  text-align: right;
+  margin-top: 4px;
+}
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 15px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  -webkit-appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus { border-color: var(--pink); }
+.form-group input.erro { border-color: #ff4444; }
+.form-group select option { background: #1a0030; }
+.cep-row { display: flex; gap: 8px; }
+.cep-row input { flex: 1; }
+.btn-cep {
+  background: var(--pink);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.btn-cep:hover { background: var(--pink-light); }
+.btn-avancar {
+  width: 100%;
+  background: linear-gradient(90deg, var(--pink), var(--pink-light));
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 800;
+  padding: 16px;
+  cursor: pointer;
+  margin-top: 16px;
+  letter-spacing: 0.03em;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 24px rgba(255,45,120,0.4);
+}
+.btn-avancar:hover { transform: scale(1.02); }
+.btn-voltar {
+  width: 100%;
+  background: none;
+  border: 1px solid var(--card-border);
+  color: var(--muted);
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: border-color 0.15s;
+}
+.btn-voltar:hover { border-color: var(--pink); color: var(--text); }
+.pix-valor {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--pink);
+  text-align: center;
+  margin-bottom: 6px;
+}
+.pix-sub {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.pix-carregando {
+  text-align: center;
+  padding: 40px 0;
+}
+.spinner-circle {
+  width: 48px; height: 48px;
+  border: 4px solid rgba(255,45,120,0.2);
+  border-top-color: var(--pink);
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  animation: pisca 1s linear infinite;
+}
+.pix-gerado { display: none; text-align: center; }
+.qr-wrap {
+  display: inline-block;
+  background: #fff;
+  padding: 12px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+.btn-copia-cola {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+}
+.btn-copia-cola:hover { border-color: var(--pink); }
+.pix-instrucoes {
+  text-align: left;
+  font-size: 13px;
+  color: var(--muted);
+  counter-reset: pix;
+  list-style: none;
+  padding: 0;
+}
+.pix-instrucoes li {
+  counter-increment: pix;
+  padding: 6px 0 6px 28px;
+  position: relative;
+}
+.pix-instrucoes li::before {
+  content: counter(pix);
+  position: absolute;
+  left: 0;
+  background: var(--pink);
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  top: 7px;
+}
+.pix-erro { display: none; text-align: center; padding: 24px 0; }
+.pix-erro p { color: var(--muted); margin-bottom: 16px; }
+.btn-retry {
+  background: none;
+  border: 1px solid var(--pink);
+  color: var(--pink);
+  border-radius: 50px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.confirmacao { text-align: center; padding: 24px 0; }
+.confirmacao .check-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  display: block;
+}
+.confirmacao h2 { font-size: 22px; font-weight: 900; margin-bottom: 12px; }
+.confirmacao p { color: var(--muted); font-size: 15px; }
+.etapa { display: none; }
+.etapa.ativa { display: block; }
+@media (min-width: 640px) {
+  .videos-grid { grid-template-columns: repeat(3, 1fr); }
+  .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+  .steps { flex-direction: row; }
+  .step { flex-direction: column; align-items: center; text-align: center; flex: 1; }
+  .kits-grid { flex-direction: row; }
+  .kit-card { flex: 1; }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar">🔥 VIRAL NO TIKTOK SHOP &bull; Frete fixo R$ 7 &bull; Pague via PIX</div>
+
+<div class="hero">
+  <div class="logo">
+    <span class="logo-lisa">LISA</span> <span class="logo-bumbum">BUMBUM</span>
+  </div>
+  <div class="badge-viral">✨ VIRAL NO TIKTOK</div>
+  <h1>O Creme Que Deixa Seu Bumbum Liso, Firme e Empinado</h1>
+  <p class="hero-sub">Mais de 8.000 mulheres já transformaram o bumbum. Resultado visível em dias.</p>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <div class="stars-sub">4.9/5 &bull; 3.847 avaliações</div>
+  <button class="btn-cta" onclick="abrirCarrinho()">QUERO O MEU AGORA →</button>
+  <div class="hero-checks">
+    <span>✓ PIX à vista</span>
+    <span>✓ Frete R$ 7</span>
+    <span>✓ Entrega rápida</span>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="strip-item">
+    <strong>8.000+</strong>
+    <span>Clientes satisfeitas</span>
+  </div>
+  <div class="strip-item">
+    <strong>4.9★</strong>
+    <span>Avaliação média</span>
+  </div>
+  <div class="strip-item">
+    <strong>#1</strong>
+    <span>Viral TikTok Shop</span>
+  </div>
+</div>
+
+<section>
+  <h2 class="sec-title">Veja Quem Já Testou e <span>Aprovou</span></h2>
+  <div class="videos-grid" id="videosGrid">
+    <div class="video-wrap" onclick="toggleVideo(this)">
+      <video src="videos/ssstik.io_1782766172793.mp4" preload="none" playsinline loop></video>
+      <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="video-wrap" onclick="toggleVideo(this)">
+      <video src="videos/ssstik.io_@dicasdaree__1782765948763.mp4" preload="none" playsinline loop></video>
+      <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="video-wrap" onclick="toggleVideo(this)">
+      <video src="videos/ssstik.io_@lalymaromba_1782765776297.mp4" preload="none" playsinline loop></video>
+      <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="video-wrap" onclick="toggleVideo(this)">
+      <video src="videos/ssstik.io_@leticiacosta.shop_1782765626402.mp4" preload="none" playsinline loop></video>
+      <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="video-wrap" onclick="toggleVideo(this)">
+      <video src="videos/ssstik.io_@leticiacosta.shop_1782765835452.mp4" preload="none" playsinline loop></video>
+      <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+    <div class="video-wrap" onclick="toggleVideo(this)">
+      <video src="videos/ssstik.io_@trendyshop.01_1782766001747.mp4" preload="none" playsinline loop></video>
+      <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec-title">Por Que o Lisa Bumbum <span>Funciona?</span></h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">🍑</div>
+      <h3>Firma e Empina</h3>
+      <p>Ação lifting visível já na 1ª semana de uso</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✨</div>
+      <h3>Pele Lisa</h3>
+      <p>Elimina aspecto rugoso e irregularidades na pele</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🌸</div>
+      <h3>Anti-Celulite</h3>
+      <p>Reduz visivelmente a aparência da casca de laranja</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">💧</div>
+      <h3>Hidratação 72h</h3>
+      <p>Textura que penetra fundo sem deixar oleosidade</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🌺</div>
+      <h3>Aroma Irresistível</h3>
+      <p>Perfume floral sofisticado que fica na pele</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">⚡</div>
+      <h3>Resultado Rápido</h3>
+      <p>Primeiros resultados em 7 a 14 dias de uso</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec-title">Como Usar <span>Lisa Bumbum</span></h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>Aplique</h3>
+        <p>Coloque uma camada generosa no bumbum e coxas</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>Massageie</h3>
+        <p>Faça movimentos circulares por 2 minutos</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h3>Repita</h3>
+        <p>Use 2x ao dia (manhã e noite) para resultado mais rápido</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kits">
+  <h2 class="sec-title">Escolha Seu <span>Kit</span></h2>
+  <div class="kits-grid">
+    <div class="kit-card" id="kit-1" onclick="selecionarKit(1)">
+      <div class="kit-name">1 Frasco</div>
+      <div class="kit-label">Experimente</div>
+      <div class="kit-preco">
+        <strong>R$ 23,99</strong>
+        <span class="kit-de">De R$ 49,90</span>
+      </div>
+    </div>
+    <div class="kit-card ativo" id="kit-2" onclick="selecionarKit(2)">
+      <div class="kit-badge">MAIS PEDIDO</div>
+      <div class="kit-name">2 Frascos</div>
+      <div class="kit-label">Resultado Garantido</div>
+      <div class="kit-preco">
+        <strong>R$ 39,99</strong>
+        <span class="kit-de">De R$ 79,90</span>
+      </div>
+    </div>
+    <div class="kit-card" id="kit-3" onclick="selecionarKit(3)">
+      <div class="kit-badge" style="background:var(--pink-light)">MELHOR VALOR</div>
+      <div class="kit-name">3 Frascos</div>
+      <div class="kit-label">Transformação Total</div>
+      <div class="kit-preco">
+        <strong>R$ 54,99</strong>
+        <span class="kit-de">De R$ 109,90</span>
+      </div>
+    </div>
+  </div>
+  <button class="btn-add" onclick="abrirCarrinho()">ADICIONAR AO CARRINHO</button>
+</section>
+
+<section>
+  <h2 class="sec-title">O Que as Clientes Estão <span>Dizendo</span></h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Fernanda R.</div>
+          <div class="review-city">São Paulo, SP</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Usando há 15 dias e o resultado é impressionante. Meu bumbum ficou muito mais firme e levantado. A celulite diminuiu bastante também. Já indiquei pra todas as minhas amigas!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Camila S.</div>
+          <div class="review-city">Rio de Janeiro, RJ</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Nunca acreditei muito em creme mas esse mudou minha vida. Na primeira semana já senti a pele muito mais lisinha. O cheiro é maravilhoso, fico passando só pelo perfume.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Juliana M.</div>
+          <div class="review-city">Belo Horizonte, MG</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Comprei o kit de 3 frascos e não me arrependo. Usando há 3 semanas e a diferença é visível. Meu namorado percebeu sem eu falar nada hahaha. Vale muito o preço!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Beatriz L.</div>
+          <div class="review-city">Fortaleza, CE</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">A textura é divina, não fica aquela sensação gordurosa. Absorve rápido e hidrata por horas. Minha pele nunca esteve tão macia.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Aline C.</div>
+          <div class="review-city">Curitiba, PR</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Usando há 10 dias e já deu pra notar a diferença na firmeza. A casca de laranja diminuiu bastante nas coxas. Produto chegou bem embalado e rápido.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Larissa P.</div>
+          <div class="review-city">Salvador, BA</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Vi no TikTok e resolvi apostar. Que decisão certa! Resultado vem mesmo. Uso de manhã antes do trabalho e à noite antes de dormir. Faz diferença usar duas vezes por dia.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Mariana T.</div>
+          <div class="review-city">Porto Alegre, RS</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Meu bumbum parece que subiu! Não é exagero não. A musculatura fica mais definida e a pele muito mais lisa. Comprei mais dois frascos pra não ficar sem.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Priscila O.</div>
+          <div class="review-city">Recife, PE</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Produto 10. A hidratação é incrível, a pele fica sedosa o dia todo. A celulite que eu tinha desde a gravidez diminuiu muito. Amei demais!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Vanessa A.</div>
+          <div class="review-city">Manaus, AM</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Entrega super rápida, chegou em 2 dias. O produto em si superou as expectativas. Pele macia, firme e com cheiro maravilhoso. Recomendo de olhos fechados!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Tatiane G.</div>
+          <div class="review-city">Goiânia, GO</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Usando há 20 dias. Bumbum firmou muito, a celulite quase não aparece mais. Me sinto muito mais confiante de biquíni. Obrigada Lisa Bumbum!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Isabela N.</div>
+          <div class="review-city">Vitória, ES</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Comprei pra testar mesmo, sem muita expectativa. Fui surpreendida logo na primeira semana. A pele ficou mais firme e o visual ficou mais definido. Estou apaixonada!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Renata K.</div>
+          <div class="review-city">Florianópolis, SC</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">O cheiro é o que mais me conquistou primeiro, mas os resultados vieram rápido também. 12 dias de uso e já percebi diferença na firmeza. Minha pele parece mais jovem!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Gabriela F.</div>
+          <div class="review-city">Belém, PA</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Passei a vida inteira procurando um produto que realmente funcionasse contra a celulite. Encontrei. Usando há um mês e a transformação é real. Nunca mais fico sem!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Patrícia H.</div>
+          <div class="review-city">Campo Grande, MS</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Produto maravilhoso! Absorve super rápido, sem grudento. Em 8 dias a pele já estava visivelmente mais lisinha. A celulite está diminuindo progressivamente.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Amanda V.</div>
+          <div class="review-city">Teresina, PI</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Fiz o kit de 2 e já quero mais. Em 2 semanas o resultado tá incrível. Bumbum mais alto e mais firme. O aroma fica na pele o dia todo, gente elogia!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Débora Q.</div>
+          <div class="review-city">Natal, RN</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Comprei pelo TikTok e confesso que duvidei. Me arrependo de ter duvidado! A pele ficou completamente diferente. Firme, lisa, hidratada. Resultado real mesmo.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Simone B.</div>
+          <div class="review-city">Maceió, AL</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Minha filha me indicou e que bom que ouvi. Com 45 anos achei que não ia ter resultado, mas me enganei. Em 3 semanas a pele está muito mais firme e bonita. Amei!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Carla Z.</div>
+          <div class="review-city">João Pessoa, PB</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Produto top demais. Preço honesto, resultado entregue. Usando há 18 dias e a celulite que antes era aparente agora some quando eu pressiono a pele. Continuando!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Luciana E.</div>
+          <div class="review-city">São Luís, MA</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Passei a aceitar meu corpo porque me sinto bem cuidada usando esse creme. O bumbum ficou visivelmente mais redondo e levantado. Que produto incrível!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Thais R.</div>
+          <div class="review-city">Cuiabá, MT</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Entrega veio em 3 dias, embalagem cuidadosa. O produto em si é top. Hidratação dura o dia todo, sem precisar reaplicar. A firmeza aparece rápido!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Nathalia W.</div>
+          <div class="review-city">Porto Velho, RO</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Já testei vários cremes anti-celulite caros e esse baratinho do TikTok ganhou todos. A pele fica lisinha de verdade. Estou no segundo frasco e os resultados só melhoram.</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Monique J.</div>
+          <div class="review-city">Macapá, AP</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Usando há 7 dias e já estou satisfeita com o resultado. Bumbum mais firme e a pele das coxas muito mais lisa. O cheiro é viciante. Produto nota 10!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Elaine X.</div>
+          <div class="review-city">Palmas, TO</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Produto sensacional. Minhas amigas perguntaram o que eu estava fazendo diferente porque meu bumbum ficou mais "durinho". Respondi: Lisa Bumbum! rsrs</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Rosana D.</div>
+          <div class="review-city">Rio Branco, AC</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Comprei pra minha aniversário e foi o melhor presente que me dei. Com 30 dias de uso meu bumbum parece o de quando eu tinha 20 anos. Produto milagroso!</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Cláudia I.</div>
+          <div class="review-city">Boa Vista, RR</div>
+        </div>
+        <div class="review-verified">Compra verificada ✓</div>
+      </div>
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">Resultado chegou antes do que eu esperava. Com 5 dias já senti a diferença na textura da pele. Com 14 dias o lifting estava evidente. Continuando para ver onde chega!</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="urgency">
+    <div class="urgency-title">⚠️ ESTOQUE LIMITADO — Apenas 47 unidades disponíveis hoje</div>
+    <button class="btn-cta" onclick="abrirCarrinho()">GARANTIR MEU KIT AGORA →</button>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec-title">Perguntas <span>Frequentes</span></h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Para que serve o Lisa Bumbum?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">O Lisa Bumbum é um creme firmador corporal desenvolvido para firmar, empidar e deixar a pele do bumbum e das coxas mais lisa e hidratada. Age no aspecto visual da celulite e proporciona efeito lifting com uso contínuo.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Em quantos dias vejo resultado?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Os primeiros resultados são percebidos entre 7 e 14 dias de uso regular. Para melhores resultados, use duas vezes ao dia (manhã e noite) com movimentos de massagem circular.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Pode usar em qualquer tipo de pele?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Sim! A fórmula do Lisa Bumbum foi desenvolvida para ser compatível com todos os tipos de pele. Caso tenha pele muito sensível, recomendamos fazer um teste em pequena área antes do uso completo.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Quantas unidades por pedido vêm?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Você escolhe o kit no momento da compra: 1 frasco, 2 frascos ou 3 frascos. Recomendamos o kit de 2 ou 3 frascos para garantir o tratamento completo e aproveitar o melhor custo-benefício.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Como é feita a entrega?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Enviamos pelos Correios para todo o Brasil com frete fixo de apenas R$ 7,00. O prazo de entrega varia de 3 a 10 dias úteis dependendo da região. Você recebe o código de rastreamento por e-mail assim que o pedido for despachado.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Tem garantia?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-a">Sim! Oferecemos garantia de satisfação. Se por qualquer motivo você não ficar satisfeita com o produto, entre em contato conosco dentro de 7 dias após o recebimento e resolveremos seu caso.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Lisa Bumbum. Todos os direitos reservados.
+</footer>
+
+<div class="sticky-bar">
+  <div class="sticky-logo"><span class="sl">LISA</span> <span class="sb">BUMBUM</span></div>
+  <div class="sticky-price" id="stickyPrice">R$ 39,99</div>
+  <button class="btn-sticky" onclick="abrirCarrinho()">COMPRAR AGORA</button>
+</div>
+
+<div class="overlay" id="overlay" onclick="fecharCarrinhoFora(event)">
+  <div class="checkout-panel">
+    <button class="checkout-close" onclick="fecharCarrinho()">✕</button>
+    <div class="steps-indicator" id="stepsIndicator">
+      <div class="step-dot ativo"></div>
+      <div class="step-dot"></div>
+      <div class="step-dot"></div>
+      <div class="step-dot"></div>
+    </div>
+
+    <div class="etapa ativa" id="etapa1">
+      <div class="checkout-title">Seu Carrinho 🛒</div>
+      <div class="cart-item">
+        <span id="cartItemName">Lisa Bumbum — 2 frascos</span>
+        <span id="cartItemPrice">R$ 39,99</span>
+      </div>
+      <div class="cart-item">
+        <span>Frete</span>
+        <span>R$ 7,00</span>
+      </div>
+      <div class="cart-total" id="cartTotal">Total: R$ 46,99</div>
+      <button class="btn-avancar" onclick="avancarEtapa1()">CONTINUAR →</button>
+    </div>
+
+    <div class="etapa" id="etapa2">
+      <div class="checkout-title">Dados de Entrega 📦</div>
+      <div class="form-group">
+        <label>Nome completo *</label>
+        <input type="text" id="campo-nome" placeholder="Seu nome completo" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label>WhatsApp *</label>
+        <input type="tel" id="campo-tel" placeholder="(11) 99999-9999" maxlength="15" inputmode="numeric" oninput="mascaraTel(this)">
+      </div>
+      <div class="form-group">
+        <label>CPF *</label>
+        <input type="text" id="campo-cpf" placeholder="000.000.000-00" maxlength="14" inputmode="numeric" oninput="mascaraCpf(this)">
+      </div>
+      <div class="form-group">
+        <label>E-mail *</label>
+        <input type="email" id="campo-email" placeholder="seuemail@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label>CEP *</label>
+        <div class="cep-row">
+          <input type="text" id="campo-cep" placeholder="00000-000" maxlength="9" inputmode="numeric" oninput="mascaraCep(this)">
+          <button class="btn-cep" onclick="buscarCep()">Buscar</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Rua *</label>
+        <input type="text" id="campo-rua" placeholder="Nome da rua">
+      </div>
+      <div class="form-group">
+        <label>Número *</label>
+        <input type="text" id="campo-numero" placeholder="123" inputmode="numeric">
+      </div>
+      <div class="form-group">
+        <label>Complemento</label>
+        <input type="text" id="campo-complemento" placeholder="Apto, bloco (opcional)">
+      </div>
+      <div class="form-group">
+        <label>Bairro *</label>
+        <input type="text" id="campo-bairro" placeholder="Seu bairro">
+      </div>
+      <div class="form-group">
+        <label>Cidade *</label>
+        <input type="text" id="campo-cidade" placeholder="Sua cidade">
+      </div>
+      <div class="form-group">
+        <label>Estado *</label>
+        <select id="campo-estado">
+          <option value="">Selecione</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        </select>
+      </div>
+      <button class="btn-avancar" onclick="avancarEtapa2()">IR PARA PAGAMENTO →</button>
+      <button class="btn-voltar" onclick="irParaEtapa(1)">← Voltar</button>
+    </div>
+
+    <div class="etapa" id="etapa3">
+      <div class="checkout-title">Pagamento PIX 💚</div>
+      <div class="pix-valor" id="pixValorDisplay"></div>
+      <div class="pix-sub">Pague via PIX — aprovação imediata</div>
+      <div id="pix-carregando" class="pix-carregando">
+        <div class="spinner-circle"></div>
+        <p style="color:var(--muted);font-size:14px">Gerando QR Code…</p>
+      </div>
+      <div id="pix-gerado" class="pix-gerado">
+        <div class="qr-wrap" id="qrcode-container"></div>
+        <button class="btn-copia-cola" onclick="copiarPix()">📋 PIX Copia e Cola</button>
+        <ol class="pix-instrucoes">
+          <li>Abra o app do seu banco</li>
+          <li>Escolha a opção PIX e depois "Ler QR Code" ou "Copia e Cola"</li>
+          <li>Confirme o pagamento no valor exato</li>
+          <li>Seu pedido será confirmado automaticamente</li>
+        </ol>
+      </div>
+      <div id="pix-erro" class="pix-erro">
+        <p>Não conseguimos gerar o QR Code. Verifique sua conexão e tente novamente.</p>
+        <button class="btn-retry" onclick="renderPagamento()">Tentar novamente</button>
+      </div>
+      <button class="btn-voltar" onclick="irParaEtapa(2)" style="margin-top:16px">← Voltar</button>
+    </div>
+
+    <div class="etapa" id="etapa4">
+      <div class="confirmacao">
+        <span class="check-icon">✅</span>
+        <h2>Pedido recebido!</h2>
+        <p>Agora realize o pagamento PIX para confirmarmos o envio.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var KITS = {
+  1: { qtd:1, preco:23.99, label:'1 frasco', de:'De R$ 49,90' },
+  2: { qtd:2, preco:39.99, label:'2 frascos', de:'De R$ 79,90' },
+  3: { qtd:3, preco:54.99, label:'3 frascos', de:'De R$ 109,90' }
+};
+var FRETE = 7.00;
+var kitAtual = 2;
+var etapaAtual = 1;
+var pixCopyText = '';
+var qrRendered = false;
+
+function fmt(v) { return 'R$ ' + v.toFixed(2).replace('.', ','); }
+
+function selecionarKit(n) {
+  kitAtual = n;
+  [1,2,3].forEach(function(i) {
+    document.getElementById('kit-' + i).classList.toggle('ativo', i === n);
+  });
+  var k = KITS[n];
+  document.getElementById('stickyPrice').textContent = fmt(k.preco);
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+  var k = KITS[kitAtual];
+  var total = k.preco + FRETE;
+  document.getElementById('cartItemName').textContent = 'Lisa Bumbum — ' + k.label;
+  document.getElementById('cartItemPrice').textContent = fmt(k.preco);
+  document.getElementById('cartTotal').textContent = 'Total: ' + fmt(total);
+  document.getElementById('pixValorDisplay').textContent = fmt(total);
+}
+
+function abrirCarrinho() {
+  _fbTrack('AddToCart', {
+    value: KITS[kitAtual].preco,
+    currency: 'BRL',
+    content_ids: ['lisa-bumbum-kit-' + kitAtual],
+    content_name: 'Lisa Bumbum — ' + KITS[kitAtual].label,
+    content_type: 'product'
+  }, { eventID: _fbUUID() });
+  atualizarCarrinho();
+  irParaEtapa(1);
+  document.getElementById('overlay').classList.add('aberto');
+  document.body.style.overflow = 'hidden';
+  qrRendered = false;
+}
+
+function fecharCarrinho() {
+  document.getElementById('overlay').classList.remove('aberto');
+  document.body.style.overflow = '';
+}
+
+function fecharCarrinhoFora(e) {
+  if (e.target === document.getElementById('overlay')) fecharCarrinho();
+}
+
+function irParaEtapa(n) {
+  etapaAtual = n;
+  [1,2,3,4].forEach(function(i) {
+    document.getElementById('etapa' + i).classList.toggle('ativa', i === n);
+  });
+  renderSteps();
+  document.querySelector('.checkout-panel').scrollTop = 0;
+}
+
+function renderSteps() {
+  var dots = document.querySelectorAll('.step-dot');
+  dots.forEach(function(d, i) {
+    d.classList.toggle('ativo', i < etapaAtual);
+  });
+}
+
+function avancarEtapa1() {
+  _fbTrack('InitiateCheckout', {
+    value: KITS[kitAtual].preco + FRETE,
+    currency: 'BRL',
+    content_ids: ['lisa-bumbum-kit-' + kitAtual],
+    num_items: KITS[kitAtual].qtd
+  }, { eventID: _fbUUID() });
+  irParaEtapa(2);
+}
+
+function avancarEtapa2() {
+  var campos = [
+    { id: 'campo-nome', val: function(v) { return v.trim().length >= 3; } },
+    { id: 'campo-tel', val: function(v) { return v.replace(/\D/g,'').length >= 10; } },
+    { id: 'campo-cpf', val: function(v) { return v.replace(/\D/g,'').length === 11; } },
+    { id: 'campo-email', val: function(v) { return v.indexOf('@') > 0; } },
+    { id: 'campo-cep', val: function(v) { return v.replace(/\D/g,'').length === 8; } },
+    { id: 'campo-rua', val: function(v) { return v.trim().length >= 2; } },
+    { id: 'campo-numero', val: function(v) { return v.trim().length >= 1; } },
+    { id: 'campo-bairro', val: function(v) { return v.trim().length >= 2; } },
+    { id: 'campo-cidade', val: function(v) { return v.trim().length >= 2; } },
+    { id: 'campo-estado', val: function(v) { return v !== ''; } }
+  ];
+  var ok = true;
+  campos.forEach(function(c) {
+    var el = document.getElementById(c.id);
+    if (!c.val(el.value)) {
+      el.classList.add('erro');
+      ok = false;
+    } else {
+      el.classList.remove('erro');
+    }
+  });
+  if (!ok) {
+    document.querySelector('.checkout-panel').scrollTop = 0;
+    return;
+  }
+  irParaEtapa(3);
+  if (!qrRendered) {
+    renderPagamento();
+    qrRendered = true;
+  }
+}
+
+function renderPagamento() {
+  document.getElementById('pix-carregando').style.display = 'block';
+  document.getElementById('pix-gerado').style.display = 'none';
+  document.getElementById('pix-erro').style.display = 'none';
+  finalizarPedido();
+}
+
+function finalizarPedido() {
+  var k = KITS[kitAtual];
+  var total = k.preco + FRETE;
+  var purchaseEvId = _fbUUID();
+  _fbTrack('Purchase', {
+    value: total,
+    currency: 'BRL',
+    content_ids: ['lisa-bumbum-kit-' + kitAtual],
+    content_name: 'Lisa Bumbum — ' + k.label,
+    content_type: 'product',
+    num_items: k.qtd
+  }, { eventID: purchaseEvId });
+  fetch('/api/criar-pagamento', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      nome: document.getElementById('campo-nome').value,
+      email: document.getElementById('campo-email').value,
+      cpf: document.getElementById('campo-cpf').value.replace(/\D/g,''),
+      tel: document.getElementById('campo-tel').value.replace(/\D/g,''),
+      cep: document.getElementById('campo-cep').value.replace(/\D/g,''),
+      rua: document.getElementById('campo-rua').value,
+      numero: document.getElementById('campo-numero').value,
+      complemento: document.getElementById('campo-complemento').value,
+      bairro: document.getElementById('campo-bairro').value,
+      cidade: document.getElementById('campo-cidade').value,
+      estado: document.getElementById('campo-estado').value,
+      kit_label: k.label,
+      kit_id: kitAtual,
+      kit_qtd: k.qtd,
+      total: total,
+      fb_event_id: purchaseEvId,
+      fb_fbc: _fbCookie('_fbc'),
+      fb_fbp: _fbCookie('_fbp'),
+      fb_event_source_url: window.location.href,
+      fb_user_agent: navigator.userAgent
+    })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (!data.ok) throw new Error(data.erro || 'Erro');
+    pixCopyText = data.qr_code_text;
+    var container = document.getElementById('qrcode-container');
+    container.innerHTML = '';
+    new QRCode(container, {
+      text: pixCopyText,
+      width: 200,
+      height: 200,
+      correctLevel: QRCode.CorrectLevel.L
+    });
+    document.getElementById('pix-carregando').style.display = 'none';
+    document.getElementById('pix-gerado').style.display = 'block';
+  })
+  .catch(function() {
+    document.getElementById('pix-carregando').style.display = 'none';
+    document.getElementById('pix-erro').style.display = 'block';
+  });
+}
+
+function copiarPix() {
+  if (!pixCopyText) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(pixCopyText).then(function() {
+      var btn = document.querySelector('.btn-copia-cola');
+      var orig = btn.textContent;
+      btn.textContent = '✅ Copiado!';
+      setTimeout(function() { btn.textContent = orig; }, 2000);
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = pixCopyText;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+}
+
+function buscarCep() {
+  var cep = document.getElementById('campo-cep').value.replace(/\D/g,'');
+  if (cep.length !== 8) return;
+  fetch('https://viacep.com.br/ws/' + cep + '/json/')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d.erro) return;
+      document.getElementById('campo-rua').value = d.logradouro || '';
+      document.getElementById('campo-bairro').value = d.bairro || '';
+      document.getElementById('campo-cidade').value = d.localidade || '';
+      document.getElementById('campo-estado').value = d.uf || '';
+    })
+    .catch(function() {});
+}
+
+function mascaraTel(el) {
+  var v = el.value.replace(/\D/g,'');
+  if (v.length > 11) v = v.slice(0,11);
+  if (v.length > 6) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+  else if (v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+  else if (v.length > 0) v = '(' + v;
+  el.value = v;
+}
+
+function mascaraCpf(el) {
+  var v = el.value.replace(/\D/g,'');
+  if (v.length > 11) v = v.slice(0,11);
+  if (v.length > 9) v = v.slice(0,3) + '.' + v.slice(3,6) + '.' + v.slice(6,9) + '-' + v.slice(9);
+  else if (v.length > 6) v = v.slice(0,3) + '.' + v.slice(3,6) + '.' + v.slice(6);
+  else if (v.length > 3) v = v.slice(0,3) + '.' + v.slice(3);
+  el.value = v;
+}
+
+function mascaraCep(el) {
+  var v = el.value.replace(/\D/g,'');
+  if (v.length > 8) v = v.slice(0,8);
+  if (v.length > 5) v = v.slice(0,5) + '-' + v.slice(5);
+  el.value = v;
+}
+
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  item.classList.toggle('open');
+}
+
+function toggleVideo(wrap) {
+  var vid = wrap.querySelector('video');
+  if (vid.paused) {
+    document.querySelectorAll('.video-wrap video').forEach(function(v) {
+      v.pause();
+      v.parentElement.classList.remove('playing');
+    });
+    vid.play();
+    wrap.classList.add('playing');
+  } else {
+    vid.pause();
+    wrap.classList.remove('playing');
+  }
+}
+
+(function() {
+  var wraps = document.querySelectorAll('.video-wrap');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) {
+          var v = e.target.querySelector('video');
+          if (!v.paused) { v.pause(); e.target.classList.remove('playing'); }
+        }
+      });
+    }, { threshold: 0.1 });
+    wraps.forEach(function(w) { obs.observe(w); });
+  }
+})();
+
+function _fbUUID() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+function _fbCookie(n) {
+  var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)'));
+  return m ? decodeURIComponent(m[1]) : '';
+}
+
+function _fbTrack(event, params, extra) {
+  if (typeof fbq !== 'undefined') fbq('track', event, params, extra);
+}
+</script>
+</body>
+</html>
