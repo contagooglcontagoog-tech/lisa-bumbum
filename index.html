@@ -252,8 +252,18 @@ footer { background:#222; color:#aaa; padding-top:56px; }
 }
 .cart-line-img img { width:100%; height:100%; object-fit:contain; }
 .cart-line-info { flex:1; }
-.cart-line-name { font-weight:600; font-size:.9em; margin-bottom:4px; }
+.cart-line-name { font-weight:600; font-size:.9em; margin-bottom:8px; }
 .cart-line-price { font-weight:700; color:var(--pink); font-size:1.05em; }
+.cart-qty { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+.cart-qty-btn {
+  width:30px; height:30px; border:1.5px solid var(--border); border-radius:7px;
+  background:var(--bg-gray); cursor:pointer; font-size:1.1em; font-weight:700;
+  color:var(--text); display:flex; align-items:center; justify-content:center;
+  transition:border-color .15s, background .15s; font-family:'Poppins',sans-serif; line-height:1;
+}
+.cart-qty-btn:hover { border-color:var(--pink); background:var(--pink-light); color:var(--pink); }
+.cart-qty-btn:disabled { opacity:.35; pointer-events:none; }
+.cart-qty-num { font-size:.95em; font-weight:700; min-width:22px; text-align:center; }
 .cart-footer-panel { padding:20px; border-top:1px solid var(--border); }
 .cart-totals { margin-bottom:16px; }
 .cart-totals-row { display:flex; justify-content:space-between; margin-bottom:8px; font-size:.9em; color:var(--text-light); }
@@ -1166,6 +1176,7 @@ var KITS = {
 };
 var FRETE = 7.00;
 var kitAtual = 2;
+var qtdCarrinho = 1;
 var etapaAtual = 1;
 var pixCopyText = '';
 var pixTimerTO = null;
@@ -1187,18 +1198,46 @@ function selecionarKit(n) {
   if (st) st.textContent = fmt(k.preco + FRETE);
 }
 
-function abrirCarrinho() {
+function renderCarrinho() {
   var k = KITS[kitAtual];
-  var total = k.preco + FRETE;
   document.getElementById('cart-body').innerHTML =
     '<div class="cart-line-item">' +
     '<div class="cart-line-img"><img src="' + k.img + '" alt="Lisa BumBum" /></div>' +
     '<div class="cart-line-info">' +
     '<div class="cart-line-name">Lisa Bumbum — ' + k.label + '</div>' +
-    '<div class="cart-line-price">' + fmt(k.preco) + '</div>' +
+    '<div class="cart-qty">' +
+    '<button class="cart-qty-btn" id="btn-menos" onclick="mudarQtd(-1)">−</button>' +
+    '<span class="cart-qty-num" id="cart-qty-num">' + qtdCarrinho + '</span>' +
+    '<button class="cart-qty-btn" onclick="mudarQtd(1)">+</button>' +
+    '</div>' +
+    '<div class="cart-line-price" id="cart-line-price">' + fmt(k.preco * qtdCarrinho) + '</div>' +
     '</div></div>';
-  document.getElementById('cart-sub').textContent   = fmt(k.preco);
+  atualizarTotaisCarrinho();
+}
+
+function mudarQtd(delta) {
+  qtdCarrinho = Math.max(1, qtdCarrinho + delta);
+  var k = KITS[kitAtual];
+  var qn = document.getElementById('cart-qty-num');
+  var lp = document.getElementById('cart-line-price');
+  var bm = document.getElementById('btn-menos');
+  if (qn) qn.textContent = qtdCarrinho;
+  if (lp) lp.textContent = fmt(k.preco * qtdCarrinho);
+  if (bm) bm.disabled = qtdCarrinho <= 1;
+  atualizarTotaisCarrinho();
+}
+
+function atualizarTotaisCarrinho() {
+  var sub   = KITS[kitAtual].preco * qtdCarrinho;
+  var total = sub + FRETE;
+  document.getElementById('cart-sub').textContent   = fmt(sub);
   document.getElementById('cart-total').textContent = fmt(total);
+}
+
+function abrirCarrinho() {
+  var k = KITS[kitAtual];
+  qtdCarrinho = 1;
+  renderCarrinho();
   document.getElementById('cart-footer').style.display = 'block';
   document.getElementById('cart-badge').textContent = '1';
   document.getElementById('cart-badge').classList.add('show');
@@ -1219,10 +1258,12 @@ function fecharCarrinho() {
 
 function abrirCheckout() {
   fecharCarrinho();
-  var k = KITS[kitAtual];
-  var total = k.preco + FRETE;
-  document.getElementById('ck-item-name').textContent  = 'Lisa Bumbum — ' + k.label;
-  document.getElementById('ck-item-price').textContent = fmt(k.preco);
+  var k     = KITS[kitAtual];
+  var sub   = k.preco * qtdCarrinho;
+  var total = sub + FRETE;
+  var nome  = k.label + (qtdCarrinho > 1 ? ' × ' + qtdCarrinho : '');
+  document.getElementById('ck-item-name').textContent  = 'Lisa Bumbum — ' + nome;
+  document.getElementById('ck-item-price').textContent = fmt(sub);
   document.getElementById('ck-total').textContent      = fmt(total);
   document.getElementById('pix-amount').textContent    = fmt(total);
   irEtapa(1);
@@ -1230,9 +1271,9 @@ function abrirCheckout() {
   document.body.style.overflow = 'hidden';
   _fbTrack('InitiateCheckout', {
     content_ids:  ['lisa-bumbum-kit-' + kitAtual],
-    content_name: 'Lisa Bumbum — ' + k.label,
+    content_name: 'Lisa Bumbum — ' + nome,
     content_type: 'product',
-    value: total, currency: 'BRL', num_items: KITS[kitAtual].qtd
+    value: total, currency: 'BRL', num_items: k.qtd * qtdCarrinho
   });
 }
 
@@ -1290,14 +1331,16 @@ function avancarEtapa1() {
 
 function gerarPix() {
   var k     = KITS[kitAtual];
-  var total = k.preco + FRETE;
+  var sub   = k.preco * qtdCarrinho;
+  var total = sub + FRETE;
+  var nome  = k.label + (qtdCarrinho > 1 ? ' × ' + qtdCarrinho : '');
   var evId  = _fbUUID();
 
   _fbTrack('Purchase', {
     value: total, currency: 'BRL',
     content_ids:  ['lisa-bumbum-kit-' + kitAtual],
-    content_name: 'Lisa Bumbum — ' + k.label,
-    content_type: 'product', num_items: k.qtd
+    content_name: 'Lisa Bumbum — ' + nome,
+    content_type: 'product', num_items: k.qtd * qtdCarrinho
   }, { eventID: evId });
 
   fetch('/api/criar-pagamento', {
@@ -1308,7 +1351,7 @@ function gerarPix() {
       email: document.getElementById('f-email').value,
       cpf:   document.getElementById('f-cpf').value,
       tel:   document.getElementById('f-tel').value,
-      kit_label: k.label, kit_id: kitAtual, kit_qtd: k.qtd, total: total,
+      kit_label: nome, kit_id: kitAtual, kit_qtd: k.qtd * qtdCarrinho, total: total,
       fb_event_id: evId, fb_fbc: _fbCookie('_fbc'), fb_fbp: _fbCookie('_fbp'),
       fb_event_source_url: window.location.href, fb_user_agent: navigator.userAgent
     })
