@@ -1324,13 +1324,6 @@ function gerarPix() {
   var nome  = k.label + (qtdCarrinho > 1 ? ' × ' + qtdCarrinho : '');
   var evId  = _fbUUID();
 
-  _fbTrack('Purchase', {
-    value: total, currency: 'BRL',
-    content_ids:  ['lisa-bumbum-kit-' + kitAtual],
-    content_name: 'Lisa Bumbum — ' + nome,
-    content_type: 'product', num_items: k.qtd * qtdCarrinho
-  }, { eventID: evId });
-
   fetch('/api/criar-pagamento', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -1348,6 +1341,13 @@ function gerarPix() {
   .then(function(data) {
     document.getElementById('pix-loading').style.display = 'none';
     if (!data.ok) throw new Error(data.erro || 'Erro ao gerar PIX.');
+    /* Purchase só dispara após PIX confirmado — evita evento falso em caso de erro */
+    _fbTrack('Purchase', {
+      value: total, currency: 'BRL',
+      content_ids:  ['lisa-bumbum-kit-' + kitAtual],
+      content_name: 'Lisa Bumbum — ' + nome,
+      content_type: 'product', num_items: k.qtd * qtdCarrinho
+    }, { eventID: evId });
     pixCopyText = data.qr_code_text;
     var el = document.getElementById('pix-qrcode');
     el.innerHTML = '';
@@ -1502,6 +1502,24 @@ function startPixTimer() {
   new IntersectionObserver(function(entries) {
     bar.classList.toggle('show', !entries[0].isIntersecting);
   }).observe(hero);
+})();
+
+/* ── ViewContent — dispara uma vez quando a seção de oferta entra na tela ── */
+(function() {
+  var oferta = document.getElementById('oferta');
+  if (!oferta || !('IntersectionObserver' in window)) return;
+  var fired = false;
+  new IntersectionObserver(function(entries) {
+    if (fired || !entries[0].isIntersecting) return;
+    fired = true;
+    var k = KITS[kitAtual];
+    _fbTrack('ViewContent', {
+      content_ids:  ['lisa-bumbum-kit-' + kitAtual],
+      content_name: 'Lisa Bumbum — ' + k.label,
+      content_type: 'product',
+      value: k.preco, currency: 'BRL'
+    });
+  }, { threshold: 0.3 }).observe(oferta);
 })();
 
 function _fbUUID() {

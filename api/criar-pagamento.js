@@ -67,7 +67,7 @@ async function sendCapiPurchase(req, body, customData) {
       event_time:       Math.floor(Date.now() / 1000),
       event_id:         fb_event_id || '',
       action_source:    'website',
-      event_source_url: fb_event_source_url || 'https://peido-de-alemao.vercel.app',
+      event_source_url: fb_event_source_url || 'https://lisa-bumbum.vercel.app',
       user_data:        userData,
       custom_data:      customData
     }],
@@ -101,7 +101,7 @@ module.exports = async function handler(req, res) {
 
     const token   = await getDiceToken();
     const payload = {
-      product_name: `Peido Alemão — ${kit_label}`,
+      product_name: `Lisa Bumbum — ${kit_label}`,
       amount:       parseFloat(total.toFixed(2)),
       payer: {
         name:     nome,
@@ -122,8 +122,8 @@ module.exports = async function handler(req, res) {
     sendCapiPurchase(req, req.body, {
       value:        parseFloat(total.toFixed(2)),
       currency:     'BRL',
-      content_ids:  ['peido-alemao-kit-' + (kit_id || '')],
-      content_name: `Peido Alemão — ${kit_label}`,
+      content_ids:  ['lisa-bumbum-kit-' + (kit_id || '')],
+      content_name: `Lisa Bumbum — ${kit_label}`,
       content_type: 'product',
       num_items:    kit_qtd || 1
     }).catch(function(e) { console.error('[CAPI] erro:', e.message); });
