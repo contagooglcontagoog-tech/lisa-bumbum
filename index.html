@@ -125,24 +125,18 @@ header {
   border-radius:20px;
   overflow:hidden;
   box-shadow:0 10px 40px rgba(0,0,0,.1);
-  background:linear-gradient(135deg, #fce8f0 0%, #f9d0e0 50%, #f5c0d5 100%);
+  background:#fff0f4;
   aspect-ratio:1;
   display:flex;
   align-items:center;
   justify-content:center;
   position:relative;
 }
-.product-visual-inner {
-  text-align:center;
-  padding:40px;
+.product-visual img {
+  width:88%; height:88%; object-fit:contain;
+  transition:transform .3s;
 }
-.product-icon { font-size:6em; margin-bottom:16px; display:block; }
-.product-brand-name {
-  font-size:2.2em; font-weight:700; color:var(--pink);
-  letter-spacing:.06em; line-height:1.1;
-}
-.product-brand-sub { font-size:.85em; color:var(--pink-dark); font-weight:500; margin-top:6px; letter-spacing:.04em; text-transform:uppercase; }
-.product-vol { margin-top:20px; background:rgba(229,90,128,.12); border:1px solid rgba(229,90,128,.3); border-radius:8px; padding:6px 16px; display:inline-block; font-size:.8em; font-weight:600; color:var(--pink-dark); }
+.product-visual:hover img { transform:scale(1.04); }
 
 .product-details h2 { font-size:2.1em; margin-bottom:14px; font-weight:600; line-height:1.2; }
 .price-block { margin-bottom:6px; }
@@ -538,10 +532,7 @@ main { display:flex; flex-direction:column; }
   .section-title { font-size:1.72em; }
   .section-subtitle { font-size:.88em; margin-bottom:28px; }
   .influencers-grid { grid-template-columns:1fr 1fr; gap:8px; }
-  .product-visual { aspect-ratio:unset; min-height:200px; }
-  .product-visual-inner { padding:24px; }
-  .product-icon { font-size:3.5em; margin-bottom:10px; }
-  .product-brand-name { font-size:1.6em; }
+  .product-visual { aspect-ratio:unset; min-height:240px; }
   .product-details h2 { font-size:1.6em; }
   .price-new { font-size:2em; }
   .trust-badges { gap:10px; }
@@ -631,12 +622,7 @@ main { display:flex; flex-direction:column; }
     <div class="container">
       <div class="oferta-grid">
         <div class="product-visual">
-          <div class="product-visual-inner">
-            <span class="product-icon">🍑</span>
-            <div class="product-brand-name">LISA<br>BUMBUM</div>
-            <div class="product-brand-sub">Creme Firmador</div>
-            <div class="product-vol">200ml • Uso Diário</div>
-          </div>
+          <img src="images/produto.webp" alt="Lisa BumBum — Creme Firmador BioSoft 120g" />
         </div>
         <div class="product-details">
           <h2>Creme Firmador Lisa Bumbum</h2>
