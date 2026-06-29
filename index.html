@@ -1144,8 +1144,8 @@ main { display:flex; flex-direction:column; }
       <div class="ck-stage" id="ck-e3">
         <div class="done-wrap">
           <div class="done-icon">✅</div>
-          <h3>Pedido Recebido!</h3>
-          <p>Realize o pagamento PIX para confirmarmos o envio. Você receberá a confirmação por e-mail assim que identificado.</p>
+          <h3>Pagamento Confirmado!</h3>
+          <p>Seu pedido foi identificado e já está sendo preparado para envio. Você receberá a confirmação por e-mail em breve.</p>
           <button class="btn-done" onclick="fecharCheckout()">Fechar</button>
         </div>
       </div>
@@ -1168,6 +1168,10 @@ var qtdCarrinho = 1;
 var etapaAtual = 1;
 var pixCopyText = '';
 var pixTimerTO = null;
+var pixPollingTO = null;
+var pixPaymentId = null;
+var pixEvId = null;
+var pixPurchaseParams = null;
 
 function fmt(v) { return 'R$ ' + v.toFixed(2).replace('.',','); }
 
@@ -1266,6 +1270,7 @@ function abrirCheckout() {
 }
 
 function fecharCheckout() {
+  pararPolling();
   document.getElementById('ck-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
@@ -1322,7 +1327,13 @@ function gerarPix() {
   var sub   = k.preco * qtdCarrinho;
   var total = sub + FRETE;
   var nome  = k.label + (qtdCarrinho > 1 ? ' × ' + qtdCarrinho : '');
-  var evId  = _fbUUID();
+  pixEvId = _fbUUID();
+  pixPurchaseParams = {
+    value: total, currency: 'BRL',
+    content_ids:  ['lisa-bumbum-kit-' + kitAtual],
+    content_name: 'Lisa Bumbum — ' + nome,
+    content_type: 'product', num_items: k.qtd * qtdCarrinho
+  };
 
   fetch('/api/criar-pagamento', {
     method: 'POST',
@@ -1333,7 +1344,7 @@ function gerarPix() {
       cpf:   document.getElementById('f-cpf').value,
       tel:   document.getElementById('f-tel').value,
       kit_label: nome, kit_id: kitAtual, kit_qtd: k.qtd * qtdCarrinho, total: total,
-      fb_event_id: evId, fb_fbc: _fbCookie('_fbc'), fb_fbp: _fbCookie('_fbp'),
+      fb_event_id: pixEvId, fb_fbc: _fbCookie('_fbc'), fb_fbp: _fbCookie('_fbp'),
       fb_event_source_url: window.location.href, fb_user_agent: navigator.userAgent
     })
   })
@@ -1341,26 +1352,45 @@ function gerarPix() {
   .then(function(data) {
     document.getElementById('pix-loading').style.display = 'none';
     if (!data.ok) throw new Error(data.erro || 'Erro ao gerar PIX.');
-    /* Purchase só dispara após PIX confirmado — evita evento falso em caso de erro */
-    _fbTrack('Purchase', {
-      value: total, currency: 'BRL',
-      content_ids:  ['lisa-bumbum-kit-' + kitAtual],
-      content_name: 'Lisa Bumbum — ' + nome,
-      content_type: 'product', num_items: k.qtd * qtdCarrinho
-    }, { eventID: evId });
-    pixCopyText = data.qr_code_text;
+    pixCopyText  = data.qr_code_text;
+    pixPaymentId = data.payment_id;
     var el = document.getElementById('pix-qrcode');
     el.innerHTML = '';
     new QRCode(el, { text: data.qr_code_text, width:200, height:200, colorDark:'#000', colorLight:'#fff', correctLevel: QRCode.CorrectLevel.L });
     document.getElementById('pix-code').textContent = data.qr_code_text;
     document.getElementById('pix-qr-wrap').style.display = 'block';
     startPixTimer();
+    iniciarPollingPagamento(data.payment_id);
   })
   .catch(function(err) {
     document.getElementById('pix-loading').style.display   = 'none';
     document.getElementById('pix-error-msg').textContent   = err.message || 'Erro ao gerar PIX. Tente novamente.';
     document.getElementById('pix-error').style.display     = 'block';
   });
+}
+
+function iniciarPollingPagamento(paymentId) {
+  pararPolling();
+  if (!paymentId) return;
+  (function poll() {
+    fetch('/api/status-pagamento?id=' + encodeURIComponent(paymentId))
+      .then(function(r){ return r.json(); })
+      .then(function(d) {
+        if (d.status === 'PAID' || d.status === 'APPROVED') {
+          pararPolling();
+          clearTimeout(pixTimerTO);
+          _fbTrack('Purchase', pixPurchaseParams, { eventID: pixEvId });
+          irEtapa(3);
+        } else {
+          pixPollingTO = setTimeout(poll, 4000);
+        }
+      })
+      .catch(function() { pixPollingTO = setTimeout(poll, 6000); });
+  })();
+}
+
+function pararPolling() {
+  if (pixPollingTO) { clearTimeout(pixPollingTO); pixPollingTO = null; }
 }
 
 function tentarNovamente() {
