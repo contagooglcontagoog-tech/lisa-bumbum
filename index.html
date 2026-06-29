@@ -1160,9 +1160,9 @@ main { display:flex; flex-direction:column; }
 var WA_NUMBER = '5511999999999'; // ← substitua pelo número real
 
 var KITS = {
-  1: { qtd:1, preco:23.99, label:'1 Frasco',  de:'R$ 49,90', install:'ou 2x de R$ 11,99 sem juros', economia:'R$ 25,91' },
-  2: { qtd:2, preco:39.99, label:'2 Frascos', de:'R$ 79,90', install:'ou 2x de R$ 19,99 sem juros', economia:'R$ 39,91' },
-  3: { qtd:3, preco:54.99, label:'3 Frascos', de:'R$ 109,90',install:'ou 3x de R$ 18,33 sem juros', economia:'R$ 54,91' }
+  1: { qtd:1, preco:23.99, label:'1 Frasco',  de:'R$ 49,90', install:'ou 2x de R$ 11,99 sem juros', economia:'R$ 25,91', img:'images/produto.webp'  },
+  2: { qtd:2, preco:39.99, label:'2 Frascos', de:'R$ 79,90', install:'ou 2x de R$ 19,99 sem juros', economia:'R$ 39,91', img:'images/produto2.jpg' },
+  3: { qtd:3, preco:54.99, label:'3 Frascos', de:'R$ 109,90',install:'ou 3x de R$ 18,33 sem juros', economia:'R$ 54,91', img:'images/produto3.webp' }
 };
 var FRETE = 7.00;
 var kitAtual = 2;
@@ -1179,6 +1179,8 @@ function selecionarKit(n) {
   document.getElementById('kopt-' + n).classList.add('active');
   document.getElementById('display-price').textContent = fmt(k.preco);
   document.getElementById('display-install').textContent = k.install;
+  var prodImg = document.querySelector('.product-visual img');
+  if (prodImg) prodImg.src = k.img;
   var sl = document.getElementById('sticky-label');
   var st = document.getElementById('sticky-total');
   if (sl) sl.textContent = 'Lisa Bumbum — ' + k.label;
@@ -1190,7 +1192,7 @@ function abrirCarrinho() {
   var total = k.preco + FRETE;
   document.getElementById('cart-body').innerHTML =
     '<div class="cart-line-item">' +
-    '<div class="cart-line-img"><img src="images/produto.webp" alt="Lisa BumBum" /></div>' +
+    '<div class="cart-line-img"><img src="' + k.img + '" alt="Lisa BumBum" /></div>' +
     '<div class="cart-line-info">' +
     '<div class="cart-line-name">Lisa Bumbum — ' + k.label + '</div>' +
     '<div class="cart-line-price">' + fmt(k.preco) + '</div>' +
