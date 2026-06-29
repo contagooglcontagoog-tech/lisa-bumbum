@@ -420,16 +420,41 @@ footer { background:#222; color:#aaa; padding-top:56px; }
 
 @media (max-width:1100px) { .ps-grid { column-count:3; } }
 @media (max-width:900px) {
-  .oferta-grid { grid-template-columns:1fr; gap:40px; }
+  .oferta-grid { grid-template-columns:1fr; gap:30px; }
   .influencers-grid { grid-template-columns:1fr 1fr; }
   .ps-grid { column-count:3; }
 }
 @media (max-width:640px) {
-  .hero h1 { font-size:2.2em; }
-  .section-title { font-size:1.9em; }
-  .influencers-grid { grid-template-columns:1fr 1fr; gap:10px; }
+  section { padding:44px 0; }
+  .hero { padding:50px 16px; }
+  .hero h1 { font-size:1.9em; line-height:1.2; }
+  .hero .subtitle { font-size:.95em; margin-bottom:24px; }
+  .hero .cta-button { display:block; width:100%; }
+  .section-title { font-size:1.72em; }
+  .section-subtitle { font-size:.88em; margin-bottom:28px; }
+  .influencers-grid { grid-template-columns:1fr 1fr; gap:8px; }
+  .product-visual { aspect-ratio:unset; min-height:200px; }
+  .product-visual-inner { padding:24px; }
+  .product-icon { font-size:3.5em; margin-bottom:10px; }
+  .product-brand-name { font-size:1.6em; }
+  .product-details h2 { font-size:1.6em; }
+  .price-new { font-size:2em; }
+  .trust-badges { gap:10px; }
+  .trust-badge { font-size:.76em; }
   .depo-grid { grid-template-columns:1fr; }
   .ps-grid { column-count:2; }
+  .ps-comment { font-size:.76em; padding:8px 12px; }
+  .cart-panel { max-width:100%; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .announcement-bar { font-size:.8em; padding:8px 12px; }
+}
+@media (max-width:400px) {
+  .hero h1 { font-size:1.65em; }
+  .influencers-grid { grid-template-columns:1fr; gap:10px; }
+  .ps-grid { column-count:1; }
+  .kit-opt { flex-direction:column; gap:4px; align-items:flex-start; }
+  .kit-opt-badge { top:-8px; }
+  .form-row2 { grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -676,11 +701,6 @@ footer { background:#222; color:#aaa; padding-top:56px; }
         <div class="ps-card">
           <img src="images/Screenshot_20260629_184233_TikTok.jpg" alt="Prova social" loading="lazy" />
           <div class="ps-comment">Resultado em 12 dias! Não acreditava mas aconteceu. Bumbum empinado!</div>
-        </div>
-
-        <div class="ps-card">
-          <img src="images/Screenshot_20260629_183911_TikTok.jpg" alt="Prova social" loading="lazy" />
-          <div class="ps-comment">Comprei achando que ia cheirar igual aos outros e me surpreendi. Cheiro suave e florido, amei!</div>
         </div>
 
         <div class="ps-card">
