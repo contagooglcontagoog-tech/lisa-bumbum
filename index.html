@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"></script>
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -600,15 +601,15 @@ main { display:flex; flex-direction:column; }
       <p class="section-subtitle">Influencers de todo o Brasil mostrando o antes e depois na virilha, bumbum e coxas. Manchas, estrias e pelos encravados sumindo em dias — e elas não conseguem parar de recomendar.</p>
       <div class="influencers-grid">
         <div class="influencer-card">
-          <video src="videos/vid1.mp4" preload="none" playsinline loop></video>
+          <video data-hls="videos/vid1/index.m3u8" playsinline loop muted></video>
           <div class="inf-play"><div class="inf-play-btn"><i class="fas fa-play"></i></div></div>
         </div>
         <div class="influencer-card">
-          <video src="videos/vid2.mp4" preload="none" playsinline loop></video>
+          <video data-hls="videos/vid2/index.m3u8" playsinline loop muted></video>
           <div class="inf-play"><div class="inf-play-btn"><i class="fas fa-play"></i></div></div>
         </div>
         <div class="influencer-card">
-          <video src="videos/vid3.mp4" preload="none" playsinline loop></video>
+          <video data-hls="videos/vid3/index.m3u8" playsinline loop muted></video>
           <div class="inf-play"><div class="inf-play-btn"><i class="fas fa-play"></i></div></div>
         </div>
       </div>
@@ -1466,25 +1467,70 @@ document.getElementById('f-cep').addEventListener('input', function() {
   this.value = v.length > 5 ? v.slice(0,5) + '-' + v.slice(5,8) : v;
 });
 
-document.querySelectorAll('.influencer-card').forEach(function(card) {
-  var video = card.querySelector('video');
-  card.addEventListener('click', function() {
-    if (video.paused) {
-      document.querySelectorAll('.influencer-card video').forEach(function(v){ if (v !== video) v.pause(); });
-      document.querySelectorAll('.influencer-card').forEach(function(c){ c.classList.remove('playing'); });
-      video.play(); card.classList.add('playing');
-    } else { video.pause(); card.classList.remove('playing'); }
-  });
-  video.addEventListener('pause', function(){ card.classList.remove('playing'); });
-  video.addEventListener('play',  function(){ card.classList.add('playing'); });
-});
+/* ── HLS video player ── */
+(function() {
+  function attachHls(video, src) {
+    if (Hls.isSupported()) {
+      var hls = new Hls({ startLevel: -1, autoStartLoad: false });
+      hls.loadSource(src);
+      hls.attachMedia(video);
+      video._hls = hls;
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      /* Safari — suporte nativo HLS */
+      video.src = src;
+    }
+  }
 
-if ('IntersectionObserver' in window) {
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if (e.isIntersecting) { e.target.preload = 'metadata'; obs.unobserve(e.target); } });
-  }, { rootMargin:'300px' });
-  document.querySelectorAll('video[preload="none"]').forEach(function(v){ obs.observe(v); });
-}
+  document.querySelectorAll('.influencer-card').forEach(function(card) {
+    var video = card.querySelector('video');
+    var src   = video.getAttribute('data-hls');
+    var loaded = false;
+
+    card.addEventListener('click', function() {
+      if (!loaded) {
+        loaded = true;
+        attachHls(video, src);
+        if (video._hls) {
+          video._hls.startLoad();
+          video._hls.once(Hls.Events.MANIFEST_PARSED, function() { video.play(); });
+        } else {
+          video.play();
+        }
+        card.classList.add('playing');
+        return;
+      }
+      if (video.paused) {
+        document.querySelectorAll('.influencer-card video').forEach(function(v){ if (v !== video) v.pause(); });
+        document.querySelectorAll('.influencer-card').forEach(function(c){ c.classList.remove('playing'); });
+        video.play(); card.classList.add('playing');
+      } else {
+        video.pause(); card.classList.remove('playing');
+      }
+    });
+    video.addEventListener('pause', function(){ card.classList.remove('playing'); });
+    video.addEventListener('play',  function(){ card.classList.add('playing'); });
+  });
+
+  /* Pré-carrega só o manifesto quando o card entra na tela */
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var card  = e.target;
+        var video = card.querySelector('video');
+        var src   = video.getAttribute('data-hls');
+        obs.unobserve(card);
+        if (Hls.isSupported() && !video._hls) {
+          var hls = new Hls({ startLevel: -1, autoStartLoad: false });
+          hls.loadSource(src);
+          hls.attachMedia(video);
+          video._hls = hls;
+        }
+      });
+    }, { rootMargin: '400px' });
+    document.querySelectorAll('.influencer-card').forEach(function(c){ obs.observe(c); });
+  }
+})();
 
 /* ── Urgência countdown ── */
 (function() {
